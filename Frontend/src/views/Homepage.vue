@@ -1,6 +1,7 @@
 <template>
     <div class="contact-page">
       <h1 class="title">Talk to us</h1>
+      
       <div class="search-bar-container">
         <input
           type="text"
