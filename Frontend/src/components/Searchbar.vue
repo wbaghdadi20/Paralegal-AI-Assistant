@@ -9,7 +9,7 @@
       />
     </div>
   </template> -->
-  <template>
+  <!-- <template>
     <div class="search-container">
       <div class="conversation">
         <div v-for="(message, index) in conversation" :key="index" :class="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
@@ -24,7 +24,7 @@
         class="search-box"
       />
     </div>
-  </template>
+  </template> -->
   
   
   <!-- <script>
@@ -44,7 +44,7 @@
   };
   </script> -->
   
-  <script>
+  <!-- <script>
     export default {
     name: "SearchBox",
     data() {
@@ -65,7 +65,7 @@
         }
     },
     };
-    </script>
+    </script> -->
 
 
   <!-- <style>
@@ -83,7 +83,7 @@
     border-radius: 5px;
   }
   </style> -->
-  <style>
+  <!-- <style>
     .search-container {
     display: flex;
     flex-direction: column;
@@ -124,6 +124,6 @@
     background-color: #f0f0f0;
     border-radius: 10px;
     }
-    </style>
+    </style> -->
 
   

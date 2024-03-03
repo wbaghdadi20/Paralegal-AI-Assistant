@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "element-plus": "^2.5.5",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
