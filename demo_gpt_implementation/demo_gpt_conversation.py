@@ -1,7 +1,7 @@
 #2024/3/3 presentation version
 from openai import OpenAI
 client = OpenAI(
-    api_key= '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'
+    api_key= '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'
 )
 Thread_Question_Preprocess = client.beta.threads.create()
 import time
@@ -10,7 +10,7 @@ print("question preprocessing layer demo")
 message = client.beta.threads.messages.create(
     thread_id=Thread_Question_Preprocess.id,
     role="user",
-    content="" #the question content input
+    content="how do I finish applying for h1b visa" #the question content input
 )
 
 run = client.beta.threads.runs.create(
