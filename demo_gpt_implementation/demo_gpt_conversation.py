@@ -1,7 +1,7 @@
 #2024/3/3 presentation version
 from openai import OpenAI
 client = OpenAI(
-    api_key= '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'
+    api_key= ''
 )
 Thread_Question_Preprocess = client.beta.threads.create()
 import time
@@ -15,7 +15,7 @@ message = client.beta.threads.messages.create(
 
 run = client.beta.threads.runs.create(
 thread_id=Thread_Question_Preprocess.id,
-assistant_id="asst_H45C7dVAP6ltH8wCMXDDg2cj", 
+assistant_id="asst_zx9qHxvw2vR16yp1X3m4wWnz", 
 )
 # Creating a run with the thread and assistant
 # Running status:
@@ -44,7 +44,7 @@ message = client.beta.threads.messages.create(
 
 run = client.beta.threads.runs.create(
 thread_id=Thread_Answers_demo.id,
-assistant_id="asst_6TgwFy5x7YKfSWVN3FeKADjs", 
+assistant_id="asst_h2wyE1flbMWT3PzL42MQDNc5", 
 )
 # Creating a new run with the thread and assistant
 # Running status:
