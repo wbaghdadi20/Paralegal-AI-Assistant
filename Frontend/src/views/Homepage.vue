@@ -1,187 +1,228 @@
 <template>
-  <el-container style="height: 100vh;">
-    <el-aside width="200px" class="sidebar">
-      <!-- Sidebar content -->
-      <el-menu
-        default-active="1"
-        class="el-menu-vertical-demo"
-        background-color="transparent"
-        text-color="#faf"
-        active-text-color="#ffd04b"
-      >
-        <el-menu-item index="1">
-          <router-link to="/">Home</router-link>
-        </el-menu-item>
-        <el-menu-item index="2">Conversation List</el-menu-item>
-        <el-menu-item index="3">Contact</el-menu-item>
-      </el-menu>
-    </el-aside>
-
-    <el-main>
-      <div class="contact-page">
-        <h1 class="title">Talk to us</h1>
-        <div class="search-bar-container">
-          <form @submit.prevent="onSearch">
-            <input
-              type="text"
-              v-model="searchQuery"
-              placeholder="Enter your query..."
-              class="search-bar"
-              required
-            />
-          </form>
+  <div class="app-container">
+    <el-container style="height: 100vh;">
+      <el-header class="header">
+        <div class="left-header">
+          <img src="@/assets/logo.png" alt="Our Logo" class="logo" />
+          <router-link to="/blog" class="nav-link">Blog</router-link>
+          <router-link to="/ai-toolkits" class="nav-link">AI Toolkits</router-link>
         </div>
-
-        <div
-          class="file-drop-area"
-          @dragover.prevent="handleDragOver"
-          @dragleave.prevent="handleDragLeave"
-          @drop.prevent="handleFileDrop"
-        >
-          Drag files here to upload
+        <div class="right-header">
+          <user-icon class="user-icon"></user-icon>
+          <span v-if="login_true" @click="promptLogin">Log In</span> 
         </div>
-
-        <div v-if="conversation.length > 0" class="conversation">
-          <div v-for="(message, index) in conversation" :key="index" class="message-container">
-            <div :class="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
-              <span :class="{'user-dot': message.sender === 'user', 'bot-dot': message.sender === 'bot'}"></span>
+      </el-header>
+      <el-container>
+        <el-aside width="200px" class="sidebar">
+          <el-menu
+            default-active="1"
+            class="el-menu-vertical-demo"
+            background-color="transparent"
+            text-color="#fff"
+            active-text-color="#ffd04b">
+            <el-menu-item index="1">
+              <router-link to="/">Home</router-link>
+            </el-menu-item>
+            <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
+            <el-menu-item index="3">Contact</el-menu-item>
+          </el-menu>
+        </el-aside>
+        <el-main class="main-content">
+          <div class="contact-page" style="margin-top: 0px;">
+            <h1 class="title">Paralegal Assistance: Talk to us</h1>
+          </div>
+          
+          <div class="conversation-section" ref="conversationContainer">
+            <div v-for="(message, index) in conversation" :key="index" 
+                class="message-bubble" :class="{'user': message.sender === 'user', 'bot': message.sender === 'bot'}">
               {{ message.content }}
             </div>
           </div>
-          <button @click="clearConversation" class="clear-button">Clear</button>
-        </div>
-      </div>
-    </el-main>
-  </el-container>
+
+          <div class="search-bar-container">
+            <el-input v-model="searchQuery" placeholder="Enter your query..." @keyup.enter="onSearch" class="search-bar">
+            </el-input>
+          </div>
+
+        </el-main>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <script>
+import { User as UserIcon, ArrowRight } from '@element-plus/icons-vue';
+
 export default {
+  components: {
+    'arrow-right': ArrowRight,
+    'user-icon': UserIcon,
+  },
   data() {
     return {
       searchQuery: '',
       conversation: [],
+      login_true: true,
+      showLoginPrompt: false
     };
   },
   methods: {
-    async onSearch() {
-      this.conversation.push({ content: this.searchQuery, sender: 'user' });
-
-      const url = 'http://127.0.0.1:5000/askQuestion';
-      try {
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ question: this.searchQuery }),
+    navigateToConversation(event) {
+      this.$router.push({ name: 'Conversation' });
+    },
+    promptLogin() {
+      this.showLoginPrompt = true;
+    },
+    onSearch() {
+      if (this.login_true && this.searchQuery.trim()) {
+        this.conversation.push({
+          content: this.searchQuery,
+          sender: 'user',
         });
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.text(); 
-
-
-        console.log('Response from servers: ', data);
-        this.conversation.push({ content: data.message, sender: 'bot' });
-      } catch (error) {
-        console.error('Error:', error);
-        this.conversation.push({ content: 'Sorry, there was an error processing your request.', sender: 'bot' });
+        this.conversation.push({
+          content: "Dummy GPT reply",
+          sender: 'bot',
+        });
+        this.searchQuery = ''; 
+        this.scrollToBottom();
       }
-
-      this.searchQuery = '';
     },
-    handleDragOver(event) {
-      event.target.style.backgroundColor = '#add8e6';
-    },
-    handleDragLeave(event) {
-      event.target.style.backgroundColor = '';
-    },
-    handleFileDrop(event) {
-      const files = event.dataTransfer.files;
-      if (files.length > 0) {
-        console.log('Dropped files', files);
-      }
-      event.target.style.backgroundColor = '';
-    },
-    clearConversation() {
-      this.conversation = [];
-    },
+    scrollToBottom() {
+      this.$nextTick(() => {
+        setTimeout(() => {
+          const container = this.$refs.conversationContainer;
+          if (container) {
+            container.scrollTop = container.scrollHeight;
+          }
+        }, 100); 
+      });
+    }
   },
+  watch: {
+    conversation() {
+      this.scrollToBottom();
+    }
+  }
 };
+
 </script>
 
+
 <style>
-.contact-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-.title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.search-bar-container {
-  width: 100%;
-  max-width: 500px;
-}
-.search-bar {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-.conversation {
-  width: 100%;
-  max-width: 500px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  overflow-y: auto;
-  background-color: #fafafa;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.user-message, .bot-message {
-  padding: 8px 10px;
-  border-radius: 10px;
-  margin: 5px 0;
-  word-wrap: break-word;
-}
-.user-message {
-  align-self: flex-end;
-  background-color: #e0e0e0;
-}
-.bot-message {
-  align-self: flex-start;
-  background-color: #f0f0f0;
-}
-.clear-button {
-  padding: 8px 15px;
-  margin-top: 10px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.clear-button:hover {
-  background-color: #d32f2f;
-}
-.file-drop-area {
-  border: 2px dotted #ccc;
-  padding: 20px;
-  text-align: center;
-  color: #ccc;
-  margin: 20px auto;
-  width: 90%;
-  height: 200px; 
-  background-color: #f0f8ff; 
-  cursor: pointer;
-}
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 0 20px;
+  }
+
+  .left-header, .right-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .nav-link {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .user-icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .sidebar {
+    background-color: #092d54;
+    width: 200px;
+    overflow-y: auto;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    flex-grow: 1;
+    overflow-y: hidden;
+  }
+
+
+  .title {
+    font-size: 28px; 
+    color: #4A90E2; 
+    font-family: 'Arial', sans-serif; 
+    margin-bottom: 20px;
+  }
+
+  .search-bar-container {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px; /* Spacing at the bottom */
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 25px; 
+    font-style: italic;
+  }
+  .send-button {
+    border: none; 
+    background: none; 
+  }
+
+  .conversation-section {
+    flex-grow: 0;
+    background-color: whitesmoke;
+    padding: 10px;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    height: 450px; 
+  }
+
+  .user {
+    align-self: flex-end;
+    background-color: #DCF8C6; 
+  }
+
+  .bot {
+    align-self: flex-start; 
+    background-color: #f0f8ff;
+  }
+
+  .conversation {
+    flex-grow: 1; 
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border: 1px solid #ccc; 
+    overflow-y: auto;
+    width: 100%; 
+  }
+  .message-bubble {
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    max-width: 50%; 
+    word-wrap: break-word; 
+  }
+
+  .contact-page {
+    text-align: center;
+  }
+
 </style>
