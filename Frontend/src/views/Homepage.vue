@@ -63,7 +63,7 @@ export default {
       searchQuery: '',
       conversation: [],
       login_true: true,
-      showLoginPrompt: false
+      showLoginPrompt: false,
     };
   },
   methods: {
@@ -78,33 +78,43 @@ export default {
         this.conversation.push({
           content: this.searchQuery,
           sender: 'user',
+          date: new Date().toLocaleString(),
         });
         this.conversation.push({
           content: "Dummy GPT reply",
           sender: 'bot',
+          date: new Date().toLocaleString(),
         });
-        this.searchQuery = ''; 
+        this.saveConversationHistory();
+        this.searchQuery = '';
         this.scrollToBottom();
       }
     },
+    saveConversationHistory() {
+      localStorage.setItem('conversationHistory', JSON.stringify(this.conversation));
+    },
     scrollToBottom() {
       this.$nextTick(() => {
-        setTimeout(() => {
-          const container = this.$refs.conversationContainer;
-          if (container) {
-            container.scrollTop = container.scrollHeight;
-          }
-        }, 100); 
+        const container = this.$refs.conversationContainer;
+        if (container) {
+          container.scrollTop = container.scrollHeight;
+        }
       });
+    }
+  },
+  mounted() {
+    const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
+    if (savedConversation) {
+      this.conversation = savedConversation;
     }
   },
   watch: {
     conversation() {
+      this.saveConversationHistory();
       this.scrollToBottom();
-    }
-  }
+    },
+  },
 };
-
 </script>
 
 
