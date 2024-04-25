@@ -13,7 +13,7 @@
         </div>
       </el-header>
       <el-container>
-        <el-aside width="200px" class="sidebar">
+        <!-- <el-aside width="200px" class="sidebar">
           <el-menu
             default-active="2"
             class="el-menu-vertical-demo"
@@ -23,6 +23,24 @@
             <el-menu-item index="1">
               <router-link to="/">Home</router-link>
             </el-menu-item>
+            <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
+            <el-menu-item index="3">Contact</el-menu-item>
+          </el-menu>
+        </el-aside> -->
+        <el-aside width="200px" class="sidebar">
+          <el-menu
+            default-active="1"
+            class="el-menu-vertical-demo"
+            background-color="transparent"
+            text-color="#fff"
+            active-text-color="#ffd04b">
+            <el-menu-item index="0">
+              <router-link to="/">Home</router-link>
+            </el-menu-item>
+            <el-menu-item index="1">
+              <router-link to="/newconversation">New Conversation</router-link>
+            </el-menu-item>
+            <!-- @click="startNewConversation">New Conversation</el-menu-item> -->
             <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
             <el-menu-item index="3">Contact</el-menu-item>
           </el-menu>
@@ -76,6 +94,9 @@ export default {
     };
   },
   methods: {
+    startNewConversation(event) {
+      this.$router.push({ name: 'Newconversation' });
+    },
     limitWords(text, limit) {
       const words = text.split(/\s+/);
       if (words.length > limit) {
@@ -91,12 +112,19 @@ export default {
       localStorage.setItem('conversationHistory', JSON.stringify(this.tableData));
     }
   },
+  // mounted() {
+  //   const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
+  //   if (savedConversation) {
+  //     this.tableData = savedConversation;
+  //   }
+  // },
   mounted() {
     const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
-    if (savedConversation) {
+    if (savedConversation && savedConversation.length > 0) {
       this.tableData = savedConversation;
     }
   },
+
 };
 </script>
 
