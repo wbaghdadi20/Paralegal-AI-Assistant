@@ -55,10 +55,18 @@
               </div>
             </div>
   
-            <div class="search-bar-container">
+            <!-- <div class="search-bar-container">
               <el-input v-model="searchQuery" placeholder="Enter your query..." @keyup.enter="onSearch" class="search-bar">
               </el-input>
+            </div> -->
+            <div class="search-bar-container">
+                <el-input v-model="searchQuery" placeholder="Enter your query..." @keyup.enter="onSearch" class="search-bar">
+                    <template #suffix>
+                    <el-button icon="el-icon-upload" class="upload-button" @click="promptFileUpload" style="background: none; border: none;"></el-button>
+                    </template>
+                </el-input>
             </div>
+
   
           </el-main>
         </el-container>
@@ -83,45 +91,72 @@
       };
     },
     methods: {
-      navigateToConversation(event) {
-        this.$router.push({ name: 'Conversation' });
-      },
-      promptLogin() {
-        this.showLoginPrompt = true;
-      },
-      onSearch() {
+        navigateToConversation(event) {
+            this.$router.push({ name: 'Conversation' });
+        },
+        promptLogin() {
+            this.showLoginPrompt = true;
+        },
+        onSearch() {
         if (this.login_true && this.searchQuery.trim()) {
-          this.conversation.push({
+            this.conversation.push({
             content: this.searchQuery,
             sender: 'user',
             date: new Date().toLocaleString(),
-          });
-          this.conversation.push({
+            });
+            this.conversation.push({
             content: "Dummy GPT reply",
             sender: 'bot',
             date: new Date().toLocaleString(),
-          });
-          this.saveConversationHistory();
-          this.searchQuery = '';
-          this.scrollToBottom();
+            });
+            this.saveConversationHistory();
+            this.searchQuery = '';
+            this.scrollToBottom();
         }
-      },
+        },
       // saveConversationHistory() {
       //   localStorage.setItem('conversationHistory', JSON.stringify(this.conversation));
       // },
-      saveConversationHistory() {
+        saveConversationHistory() {
         const combinedMessage = this.conversation.map(msg => `${msg.sender}: ${msg.content}`).join(' - ');
         localStorage.setItem('conversationHistory', JSON.stringify([{content: combinedMessage, date: new Date().toLocaleString()}]));
-      },
+        },
+
+        promptFileUpload() {
+            let fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.style.display = 'none'; // Hide the input element
+            fileInput.onchange = e => {
+                let file = fileInput.files[0];
+                if (file) {
+                // Calculate file size in MB
+                const fileSize = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+                // Construct file data message
+                const fileData = {
+                    content: `File uploaded: ${file.name}, Size: ${fileSize}, Type: ${file.type}`,
+                    sender: 'user',
+                    date: new Date().toLocaleString(),
+                    status: 'Upload successful'
+                };
+                this.conversation.push(fileData);
+                this.saveConversationHistory();
+                this.scrollToBottom();
+                }
+            };
+            document.body.appendChild(fileInput);
+            fileInput.click();
+            document.body.removeChild(fileInput); // Clean up after adding
+        },
+
   
-      scrollToBottom() {
-        this.$nextTick(() => {
-          const container = this.$refs.conversationContainer;
-          if (container) {
-            container.scrollTop = container.scrollHeight;
-          }
-        });
-      }
+        scrollToBottom() {
+            this.$nextTick(() => {
+            const container = this.$refs.conversationContainer;
+            if (container) {
+              container.scrollTop = container.scrollHeight;
+            }
+            });
+        }
     },
     mounted() {
       const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
@@ -198,18 +233,46 @@
       margin-bottom: 20px;
     }
   
-    .search-bar-container {
+    /* .search-bar-container {
       display: flex;
       justify-content: center; 
-      margin-bottom: 20px; /* Spacing at the bottom */
-    }
+      margin-bottom: 20px; 
+    } */
   
-    .search-bar {
+    /* .search-bar {
       width: 100%;
       max-width: 800px;
       border-radius: 25px; 
       font-style: italic;
+    } */
+
+    .search-bar-container {
+        display: flex;
+        justify-content: center; 
+        margin-bottom: 20px; 
     }
+
+    .search-bar {
+        width: 100%;
+        max-width: 800px;
+        height: 50px; 
+        border-radius: 25px; 
+        font-style: italic;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+        padding: 0 20px; 
+    }
+
+    
+
+    .upload-button {
+        cursor: pointer;
+        color: #606266; /* Changed to be more visible, adjust as needed */
+        font-size: 20px; /* Ensure icon size is sufficient */
+    }
+
+
+
+    
     .send-button {
       border: none; 
       background: none; 
