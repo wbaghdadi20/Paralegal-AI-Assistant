@@ -4,3 +4,4 @@ fine-tuning/uscis_data/
 fine-tuning/test_data/
 uscis_data/
 Backend/.env
+PDF/
