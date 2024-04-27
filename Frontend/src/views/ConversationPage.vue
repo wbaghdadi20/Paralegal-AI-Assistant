@@ -127,7 +127,7 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #333;
+      background-color: #253d57;
       color: white;
       padding: 0 20px;
   }
@@ -224,5 +224,10 @@ export default {
   .slide-enter, .slide-leave-to {
     transform: translateX(-200px);
   }
+  .el-menu-vertical-demo .el-menu-item {
+  color: black; /* Change text color to black */
+  font-weight: bold; /* Make text bold */
+}
+
 
 </style>
