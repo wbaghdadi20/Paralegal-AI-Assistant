@@ -3,6 +3,7 @@
     <el-container style="height: 100vh;">
       <el-header class="header">
         <div class="left-header">
+          <button @click="toggleSidebar" class="toggle-button">☰</button>
           <img src="@/assets/logo.png" alt="Our Logo" class="logo" />
           <router-link to="/blog" class="nav-link">Blog</router-link>
           <router-link to="/ai-toolkits" class="nav-link">AI Toolkits</router-link>
@@ -13,38 +14,25 @@
         </div>
       </el-header>
       <el-container>
-        <!-- <el-aside width="200px" class="sidebar">
-          <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            background-color="transparent"
-            text-color="#fff"
-            active-text-color="#ffd04b">
-            <el-menu-item index="1">
-              <router-link to="/">Home</router-link>
-            </el-menu-item>
-            <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
-            <el-menu-item index="3">Contact</el-menu-item>
-          </el-menu>
-        </el-aside> -->
-        <el-aside width="200px" class="sidebar">
-          <el-menu
-            default-active="1"
-            class="el-menu-vertical-demo"
-            background-color="transparent"
-            text-color="#fff"
-            active-text-color="#ffd04b">
-            <el-menu-item index="0">
-              <router-link to="/">Home</router-link>
-            </el-menu-item>
-            <el-menu-item index="1">
-              <router-link to="/newconversation">New Conversation</router-link>
-            </el-menu-item>
-            <!-- @click="startNewConversation">New Conversation</el-menu-item> -->
-            <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
-            <el-menu-item index="3">Contact</el-menu-item>
-          </el-menu>
-        </el-aside>
+        <transition name="slide">
+          <el-aside v-show="isSidebarVisible" width="200px" class="sidebar">
+            <el-menu
+              default-active="1"
+              class="el-menu-vertical-demo"
+              background-color="transparent"
+              text-color="#fff"
+              active-text-color="#ffd04b">
+              <el-menu-item index="0">
+                <router-link to="/">Home</router-link>
+              </el-menu-item>
+              <el-menu-item index="1">
+                <router-link to="/newconversation">New Conversation</router-link>
+              </el-menu-item>
+              <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
+              <el-menu-item index="3">Contact</el-menu-item>
+            </el-menu>
+          </el-aside>
+        </transition>
         <el-main class="main-content">
           <el-table :data="tableData" style="width: 100%">
             <el-table-column
@@ -91,9 +79,11 @@ export default {
     return {
       tableData: [],
       login_true: true,
+      isSidebarVisible: true, 
     };
   },
-  methods: {
+
+    methods: {
     startNewConversation(event) {
       this.$router.push({ name: 'Newconversation' });
     },
@@ -110,21 +100,17 @@ export default {
     handleDelete(index, row) {
       this.tableData.splice(index, 1);
       localStorage.setItem('conversationHistory', JSON.stringify(this.tableData));
-    }
+    },
+    toggleSidebar() {
+      this.isSidebarVisible = !this.isSidebarVisible;
+    },
   },
-  // mounted() {
-  //   const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
-  //   if (savedConversation) {
-  //     this.tableData = savedConversation;
-  //   }
-  // },
   mounted() {
     const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
     if (savedConversation && savedConversation.length > 0) {
       this.tableData = savedConversation;
     }
   },
-
 };
 </script>
 
@@ -167,7 +153,7 @@ export default {
   }
 
   .sidebar {
-      background-color: #092d54;
+      background-color: #f8f7f5;
       width: 200px;
       overflow-y: auto;
   }
@@ -175,7 +161,7 @@ export default {
   .main-content {
       flex-grow: 1;
       overflow-y: auto;
-      background-color: #f4f4f4;
+      background-color: #ffffff;
   }
 
   .contact-page, .title, .search-bar-container, .file-drop-area, .conversation, .clear-button {
@@ -216,11 +202,27 @@ export default {
   }
 
   .el-table .warning-row {
-      background: oldlace;
+      background: rgb(15, 10, 1);
   }
 
   .el-table .success-row {
-      background: #f0f9eb;
+      background: #fefefe;
+  }
+
+  .toggle-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .slide-enter-active, .slide-leave-active {
+    transition: transform 0.3s ease;
+  }
+  .slide-enter, .slide-leave-to {
+    transform: translateX(-200px);
   }
 
 </style>
