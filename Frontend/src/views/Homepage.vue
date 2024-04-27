@@ -3,33 +3,38 @@
     <el-container style="height: 100vh;">
       <el-header class="header">
         <div class="left-header">
+          <button @click="toggleSidebar" class="toggle-button">☰</button>
           <img src="@/assets/logo.png" alt="Our Logo" class="logo" />
           <router-link to="/blog" class="nav-link">Blog</router-link>
           <router-link to="/ai-toolkits" class="nav-link">AI Toolkits</router-link>
         </div>
         <div class="right-header">
           <user-icon class="user-icon"></user-icon>
-          <span v-if="login_true" @click="promptLogin">Log In</span> 
+          <span v-if="login_true" @click="promptLogin">Log In</span>
         </div>
       </el-header>
       <el-container>
-        <el-aside width="200px" class="sidebar">
-          <el-menu
-            default-active="1"
-            class="el-menu-vertical-demo"
-            background-color="transparent"
-            text-color="#fff"
-            active-text-color="#ffd04b">
-            <el-menu-item index="0">
-              <router-link to="/">Home</router-link>
-            </el-menu-item>
-            <el-menu-item index="1" @click="startNewConversation">New Conversation</el-menu-item>
-            <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
-            <el-menu-item index="3">Contact</el-menu-item>
-          </el-menu>
-        </el-aside>
-
+        <transition name="slide">
+          <el-aside v-show="isSidebarVisible" width="200px" class="sidebar">
+            <el-menu
+              default-active="1"
+              class="el-menu-vertical-demo"
+              background-color="transparent"
+              text-color="#ffffff"
+              active-text-color="#ffd04b">
+              <el-menu-item index="0">
+                <router-link to="/">Home</router-link>
+              </el-menu-item>
+              <el-menu-item index="1" @click="startNewConversation">New Conversation</el-menu-item>
+              <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
+              <el-menu-item index="3">Contact</el-menu-item>
+            </el-menu>
+          </el-aside>
+        </transition>
         <el-main class="main-content">
+          <div class="contact-page" style="margin-top: 0px;">
+            <h1 class="title">Expert Paralegal Support - We're here to listen</h1>
+          </div>
           <div class="bottom-actions">
             <div class="action-grid">
               <el-card class="action-box" @click="startNewConversation">
@@ -46,8 +51,8 @@
               </el-card>
             </div>
           </div>
-        </el-main>
 
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -67,6 +72,7 @@ export default {
       conversation: [],
       login_true: true,
       showLoginPrompt: false,
+      isSidebarVisible: true,
     };
   },
   methods: {
@@ -97,14 +103,10 @@ export default {
         this.scrollToBottom();
       }
     },
-    // saveConversationHistory() {
-    //   localStorage.setItem('conversationHistory', JSON.stringify(this.conversation));
-    // },
     saveConversationHistory() {
       const combinedMessage = this.conversation.map(msg => `${msg.sender}: ${msg.content}`).join(' - ');
       localStorage.setItem('conversationHistory', JSON.stringify([{content: combinedMessage, date: new Date().toLocaleString()}]));
     },
-
     scrollToBottom() {
       this.$nextTick(() => {
         const container = this.$refs.conversationContainer;
@@ -112,7 +114,11 @@ export default {
           container.scrollTop = container.scrollHeight;
         }
       });
-    }
+    },
+
+    toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  },
   },
   mounted() {
     const savedConversation = JSON.parse(localStorage.getItem('conversationHistory'));
@@ -120,6 +126,7 @@ export default {
       this.conversation = savedConversation;
     }
   },
+  
   watch: {
     conversation() {
       this.saveConversationHistory();
@@ -130,7 +137,7 @@ export default {
 </script>
 
 
-<!-- <style>
+<style>
   .app-container {
     display: flex;
     flex-direction: column;
@@ -142,7 +149,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #b08d63;
     color: white;
     padding: 0 20px;
   }
@@ -168,136 +175,29 @@ export default {
   }
 
   .sidebar {
-    background-color: #092d54;
+    background-color: #0f0954;
     width: 200px;
     overflow-y: auto;
   }
 
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%; 
-    flex-grow: 1;
-    overflow-y: hidden;
-  }
-
-
   .title {
-    font-size: 28px; 
-    color: #4A90E2; 
-    font-family: 'Arial', sans-serif; 
-    margin-bottom: 20px;
-  }
-
-  .search-bar-container {
-    display: flex;
-    justify-content: center; 
-    margin-bottom: 20px; /* Spacing at the bottom */
-  }
-
-  .search-bar {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 25px; 
-    font-style: italic;
-  }
-  .send-button {
-    border: none; 
-    background: none; 
-  }
-
-  .conversation-section {
-    flex-grow: 0;
-    background-color: whitesmoke;
-    padding: 10px;
-    overflow-y: auto; 
-    display: flex;
-    flex-direction: column;
-    height: 450px; 
-  }
-
-  .user {
-    align-self: flex-end;
-    background-color: #DCF8C6; 
-  }
-
-  .bot {
-    align-self: flex-start; 
-    background-color: #f0f8ff;
-  }
-
-  .conversation {
-    flex-grow: 1; 
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #f0f8ff;
-    border: 1px solid #ccc; 
-    overflow-y: auto;
-    width: 100%; 
-  }
-  .message-bubble {
-    padding: 10px 20px;
-    border-radius: 15px;
-    margin: 10px 0;
-    max-width: 50%; 
-    word-wrap: break-word; 
-  }
-
-  .contact-page {
-    text-align: center;
-  }
-
-</style> -->
-<style>
-.app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  font-size: 28px; 
+  color: #070808; 
+  font-family: 'Helvetica', sans-serif; /* or 'Arial', sans-serif; if Helvetica is not available */
+  text-align: center; 
+  margin-top: 20px; 
+  margin-bottom: 20px;
+  font-weight: bold; /* This makes the text bold */
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 0 20px;
-}
-
-.left-header, .right-header {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 50px;
-}
-
-.nav-link {
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
-}
-
-.user-icon {
-  font-size: 24px;
-  margin-right: 10px;
-}
-
-.sidebar {
-  background-color: #092d54;
-  width: 200px;
-  overflow-y: auto;
-}
-
-.main-content {
+  .main-content {
   flex-grow: 1;
   overflow-y: auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-top: 20px; 
 }
 
 .bottom-actions {
@@ -309,7 +209,9 @@ export default {
   height: 25%;
 }
 
-.action-grid {
+  
+
+  .action-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 40px;
@@ -335,6 +237,32 @@ export default {
   background-color: #e6e6e6;
   transform: translateY(-2px);
 }
+
+  .toggle-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+  }
+
+  .slide-enter-active, .slide-leave-active {
+    transition: transform 0.3s ease;
+  }
+  .slide-enter, .slide-leave-to {
+    transform: translateX(-200px);
+  }
+
+  .el-menu-vertical-demo .el-menu-item {
+  color: black;
+  font-weight: bold; 
+}
+
+.el-menu-vertical-demo .el-menu-item.is-active {
+  color: black; 
+  font-weight: bold; 
+}
+
+
 </style>
-
-
