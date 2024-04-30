@@ -3,6 +3,7 @@
       <el-container style="height: 100vh;">
         <el-header class="header">
           <div class="left-header">
+            <button @click="toggleSidebar" class="toggle-button">☰</button>
             <img src="@/assets/logo.png" alt="Our Logo" class="logo" />
             <router-link to="/blog" class="nav-link">Blog</router-link>
             <router-link to="/ai-toolkits" class="nav-link">AI Toolkits</router-link>
@@ -13,21 +14,8 @@
           </div>
         </el-header>
         <el-container>
-          <!-- <el-aside width="200px" class="sidebar">
-            <el-menu
-              default-active="1"
-              class="el-menu-vertical-demo"
-              background-color="transparent"
-              text-color="#fff"
-              active-text-color="#ffd04b">
-              <el-menu-item index="1">
-                <router-link to="/">Home</router-link>
-              </el-menu-item>
-              <el-menu-item index="2" @click="navigateToConversation">Conversation List</el-menu-item>
-              <el-menu-item index="3">Contact</el-menu-item>
-            </el-menu>
-          </el-aside> -->
-          <el-aside width="200px" class="sidebar">
+          <transition name="slide">
+          <el-aside v-show="isSidebarVisible" width="200px" class="sidebar">
             <el-menu
               default-active="1"
               class="el-menu-vertical-demo"
@@ -42,7 +30,7 @@
               <el-menu-item index="3">Contact</el-menu-item>
             </el-menu>
           </el-aside>
-  
+        </transition>
           <el-main class="main-content">
             <div class="contact-page" style="margin-top: 0px;">
               <h1 class="title">Paralegal Assistance: Talk to us</h1>
@@ -88,6 +76,7 @@
         conversation: [],
         login_true: true,
         showLoginPrompt: false,
+        isSidebarVisible: true,
       };
     },
     methods: {
@@ -156,6 +145,10 @@
               container.scrollTop = container.scrollHeight;
             }
             });
+        },
+
+        toggleSidebar() {
+          this.isSidebarVisible = !this.isSidebarVisible;
         }
     },
     mounted() {
@@ -318,5 +311,23 @@
     .contact-page {
       text-align: center;
     }
+
+    .toggle-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+  }
+
+  .slide-enter-active, .slide-leave-active {
+    transition: transform 0.3s ease;
+  }
+  .slide-enter, .slide-leave-to {
+    transform: translateX(-200px);
+  }
+
+
   
   </style>
