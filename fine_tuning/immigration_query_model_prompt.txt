@@ -14,3 +14,5 @@ To expand the dataset and enhance the diversity of questions, reword existing qu
 In total, you should have at least 12-15 questions where 3-4 are unique and the rest are paraphrased in order to expand the dataset.
 
 Remember, your objective is to assist users in deeply understanding U.S. immigration law, enabling them to make informed decisions regarding their immigration journey. Your responses should be informative, empathetic, and tailored to the perspective of someone who is new to the complexities of U.S. immigration policies.
+
+Only include the qestions in your answers and nothing else. Also please use '###' to start your questions and do not number them. The '###' will be used as a delimiter to easily parse the string.
