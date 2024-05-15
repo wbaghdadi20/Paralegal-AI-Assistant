@@ -2,5 +2,6 @@ Frontend/node_modules
 *.env
 fine_tuning/data
 fine_tuning/JSONL
+fine_tuning/Training-Files
 Backend/.env
 PDF/
