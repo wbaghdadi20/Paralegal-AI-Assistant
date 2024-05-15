@@ -1,6 +1,7 @@
 <template>
     <div :class="$style.home">
       <img :class="$style.homeChild" alt="" />
+      <img :class="$style.maskGroupIcon" alt="" src="@/assets/mask-group@2x.png" />
       <div :class="$style.homeItem" />
       <div :class="$style.questions">
         <b :class="$style.frequentlyAskedQuestions">Frequently Asked Questions</b>
@@ -204,9 +205,9 @@
     </div>
   </template>
   <script lang="ts">
-    import { User as UserIcon } from '@element-plus/icons-vue';
+    import { defineComponent } from "vue";
   
-    export default{
+    export default defineComponent({
       name: "Home",
       methods: {
         onGroupContainerClick() {
@@ -225,7 +226,7 @@
           }
         },
       },
-    };
+    });
   </script>
   <style module>
     .homeChild {
