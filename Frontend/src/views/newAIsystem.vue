@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.aiSystem">
     <img :class="$style.aiSystemChild" alt="" />
-
+    <img :class="$style.maskGroupIcon" alt="" src="@/assets/mask-group@2x.png" />
     <div :class="$style.signInSignUp">
       <button :class="$style.signIn" :autoFocus="true">Sign In</button>
       <button :class="$style.signUp" :autoFocus="true">
@@ -40,9 +40,9 @@
   </div>
 </template>
 <script lang="ts">
-  import { User as UserIcon, ArrowRight } from '@element-plus/icons-vue';
+  import { defineComponent } from "vue";
 
-  export default {
+  export default defineComponent({
     name: "AISystem",
     methods: {
       onTHEMISAITextClick() {
@@ -52,7 +52,7 @@
         this.$router.push("/");
       },
     },
-  };
+  });
 </script>
 
 <style module>
