@@ -1,36 +1,35 @@
 <template>
     <div :class="$style.home">
       <img :class="$style.homeChild" alt="" />
-      <img :class="$style.maskGroupIcon" alt="" src="/mask-group@2x.png" />
       <div :class="$style.homeItem" />
       <div :class="$style.questions">
         <b :class="$style.frequentlyAskedQuestions">Frequently Asked Questions</b>
         <div :class="$style.question1">
           <div :class="$style.question1Child" />
           <b :class="$style.firstQuestion">first question</b>
-          <img :class="$style.frameIcon" alt="" src="/frame.svg" />
+          <img :class="$style.frameIcon" alt="" src="@/assets/frame.png" />
         </div>
         <div :class="$style.question2">
           <div :class="$style.rectangleParent">
             <div :class="$style.groupChild" />
             <b :class="$style.secondQuestion">second question</b>
-            <img :class="$style.frameIcon" alt="" src="/frame1.svg" />
+            <img :class="$style.frameIcon" alt="" src="@/assets/frame1.png" />
           </div>
         </div>
         <div :class="$style.question3">
           <div :class="$style.groupChild" />
           <b :class="$style.secondQuestion">third question</b>
-          <img :class="$style.frameIcon" alt="" src="/frame1.svg" />
+          <img :class="$style.frameIcon" alt="" src="@/assets/frame1.png" />
         </div>
         <div :class="$style.question4">
           <div :class="$style.groupChild" />
           <b :class="$style.secondQuestion"> fourth question</b>
-          <img :class="$style.frameIcon" alt="" src="/frame1.svg" />
+          <img :class="$style.frameIcon" alt="" src="@/assets/frame1.png" />
         </div>
         <div :class="$style.question5">
           <div :class="$style.groupChild" />
           <b :class="$style.secondQuestion">fifth question</b>
-          <img :class="$style.frameIcon" alt="" src="/frame1.svg" />
+          <img :class="$style.frameIcon" alt="" src="@/assets/frame1.png" />
         </div>
       </div>
       <div :class="$style.letsGetInTouch">
@@ -71,11 +70,6 @@
         </button>
       </div>
       <div :class="$style.checkOurWork">
-        <img
-          :class="$style.checkOurWorkPic"
-          alt=""
-          src="/check-our-work-pic@2x.png"
-        />
         <b :class="$style.checkOurWork1">Check our Work</b>
       </div>
       <div :class="$style.pricing">
@@ -94,32 +88,32 @@
             <div :class="$style.groupParent">
               <div :class="$style.parent">
                 <div :class="$style.div">1</div>
-                <img :class="$style.frameIcon5" alt="" src="/frame2.svg" />
+                <img :class="$style.frameIcon5" alt="" src="@/assets/frame2.png" />
               </div>
               <div :class="$style.group">
                 <div :class="$style.div">2</div>
-                <img :class="$style.frameIcon5" alt="" src="/frame2.svg" />
+                <img :class="$style.frameIcon5" alt="" src="@/assets/frame2.png" />
               </div>
               <div :class="$style.container">
                 <div :class="$style.div">3</div>
-                <img :class="$style.frameIcon5" alt="" src="/frame2.svg" />
+                <img :class="$style.frameIcon5" alt="" src="@/assets/frame2.png" />
               </div>
             </div>
             <div :class="$style.groupContainer">
               <div :class="$style.groupDiv">
                 <div :class="$style.div">4</div>
-                <img :class="$style.frameIcon5" alt="" src="/frame2.svg" />
+                <img :class="$style.frameIcon5" alt="" src="@/assets/frame2.png" />
               </div>
               <div :class="$style.group">
                 <div :class="$style.div">5</div>
-                <img :class="$style.frameIcon5" alt="" src="/frame2.svg" />
+                <img :class="$style.frameIcon5" alt="" src="@/assets/frame2.png" />
               </div>
               <div :class="$style.parent2">
                 <div :class="$style.div">6</div>
-                <img :class="$style.frameIcon5" alt="" src="/frame2.svg" />
+                <img :class="$style.frameIcon5" alt="" src="@/assets/frame2.png" />
               </div>
             </div>
-            <img :class="$style.frameIcon11" alt="" src="/frame3.svg" />
+            <img :class="$style.frameIcon11" alt="" src="@/assets/frame3.png" />
           </div>
         </div>
       </div>
@@ -145,7 +139,7 @@
           <div :class="$style.first">first</div>
           <div :class="$style.blah2">blah</div>
           <div :class="$style.whatWeDoBlock1Item" />
-          <img :class="$style.block1Icon" alt="" src="/block1.svg" />
+
         </div>
         <div :class="$style.whatWeDoBlock2">
           <div :class="$style.whatWeDoBlock1Child" />
@@ -154,7 +148,7 @@
           <div :class="$style.whatWeDoBlock2Inner">
             <div :class="$style.groupChild3" />
           </div>
-          <img :class="$style.frameIcon12" alt="" src="/frame4.svg" />
+
         </div>
         <div :class="$style.whatWeDoBlock3">
           <div :class="$style.whatWeDoBlock1Child" />
@@ -163,7 +157,7 @@
           <div :class="$style.whatWeDoBlock3Inner">
             <div :class="$style.groupChild3" />
           </div>
-          <img :class="$style.frameIcon13" alt="" src="/frame5.svg" />
+
         </div>
         <div :class="$style.whatWeDoBlock4">
           <div :class="$style.whatWeDoBlock4Child" />
@@ -172,12 +166,12 @@
           <div :class="$style.whatWeDoBlock4Inner">
             <div :class="$style.groupChild3" />
           </div>
-          <img :class="$style.frameIcon14" alt="" src="/frame6.svg" />
+
         </div>
       </div>
       <div :class="$style.logoTop">
         <b :class="$style.themisAi">THEMIS AI</b>
-        <img :class="$style.logo1Icon" alt="" src="/logo-1@2x.png" />
+        <img :class="$style.logo1Icon" alt="" src="@/assets/logo.png" />
       </div>
       <div :class="$style.bottomContactInformation">
         <div
@@ -193,7 +187,7 @@
         </div>
         <div :class="$style.logoBottom">
           <b :class="$style.themisAi1">THEMIS AI</b>
-          <img :class="$style.logo1Icon1" alt="" src="/logo-1@2x.png" />
+          <img :class="$style.logo1Icon1" alt="" src="@/assets/logo.png" />
         </div>
       </div>
       <div :class="$style.frameParent">
@@ -210,9 +204,9 @@
     </div>
   </template>
   <script lang="ts">
-    import { defineComponent } from "vue";
+    import { User as UserIcon } from '@element-plus/icons-vue';
   
-    export default defineComponent({
+    export default{
       name: "Home",
       methods: {
         onGroupContainerClick() {
@@ -231,7 +225,7 @@
           }
         },
       },
-    });
+    };
   </script>
   <style module>
     .homeChild {
