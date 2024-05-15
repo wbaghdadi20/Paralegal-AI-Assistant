@@ -1,37 +1,41 @@
 <template>
-  <div :class="$style.aiSystem">
-    <img :class="$style.aiSystemChild" alt="" />
-    <img :class="$style.maskGroupIcon" alt="" src="@/assets/mask-group@2x.png" />
-    <div :class="$style.signInSignUp">
-      <button :class="$style.signIn" :autoFocus="true">Sign In</button>
-      <button :class="$style.signUp" :autoFocus="true">
-        <div :class="$style.signUpChild" />
-        <button :class="$style.signUp1" :autoFocus="true">Sign Up</button>
+  <div class="ai-system">
+    <img class="ai-system-child" alt="" />
+    <img class="mask-group-icon1" alt="" src="@/assets/mask-group@2x.png" />
+    <div class="sign-in-sign-up1">
+      <button class="sign-in1" :autoFocus="true">Sign In</button>
+      <button class="sign-up2" :autoFocus="true">
+        <div class="sign-up-item" />
+        <button class="sign-up3" :autoFocus="true">Sign Up</button>
       </button>
     </div>
-    <div :class="$style.logoTop">
-      <b :class="$style.themisAi" @click="onTHEMISAITextClick">THEMIS AI</b>
-      <img :class="$style.logo1Icon" alt="" src="@/assets/logo.png" @click="onLogo1ImageClick"/>
+    <div class="logo-top1">
+      <b class="themis-ai2" @click="onTHEMISAITextClick">THEMIS AI</b>
+      <img
+        class="logo-1-icon2"
+        alt=""
+        src="@/assets/logo.png"
+        @click="onLogo1ImageClick"
+      />
     </div>
-    <div :class="$style.sidebar">
-      <div :class="$style.sidebarChild" />
-      <div :class="$style.newChat">
-        <div :class="$style.signUpChild" />
-        <button :class="$style.signUp1" :autoFocus="true">New Chat</button>
-        <b :class="$style.newChat1">New Chat</b>
+    <div class="sidebar">
+      <div class="sidebar-child" />
+      <div class="new-chat">
+
+        <b class="new-chat1">New Chat</b>
       </div>
-      <div :class="$style.sidebarInner">
-        <div :class="$style.yourConversationsParent">
-          <div :class="$style.yourConversations">Your conversations</div>
-          <div :class="$style.clearAll">Clear All</div>
+      <div class="sidebar-inner">
+        <div class="your-conversations-parent">
+          <div class="your-conversations">Your conversations</div>
+          <div class="clear-all">Clear All</div>
         </div>
       </div>
     </div>
-    <div :class="$style.searchBar">
-      <div :class="$style.searchBarChild" />
-      <div :class="$style.vuesaxlinearsend2Wrapper">
+    <div class="search-bar">
+      <div class="search-bar-child" />
+      <div class="vuesaxlinearsend-2-wrapper">
         <img
-          :class="$style.vuesaxlinearsend2Icon"
+          class="vuesaxlinearsend-2-icon"
           alt=""
           src="@/assets/vuesaxlinearsend2.png"
         />
@@ -54,9 +58,8 @@
     },
   });
 </script>
-
-<style module>
-  .aiSystemChild {
+<style scoped>
+  .ai-system-child {
     position: absolute;
     height: 6.98%;
     width: 210.86%;
@@ -69,7 +72,7 @@
     max-height: 100%;
     display: none;
   }
-  .maskGroupIcon {
+  .mask-group-icon1 {
     position: absolute;
     height: 143.03%;
     width: 81.13%;
@@ -83,7 +86,7 @@
     object-fit: contain;
     display: none;
   }
-  .signIn {
+  .sign-in1 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -99,7 +102,7 @@
     display: inline-block;
     opacity: 0.8;
   }
-  .signUpChild {
+  .sign-up-item {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -108,7 +111,7 @@
     width: 132px;
     height: 48px;
   }
-  .signUp1 {
+  .sign-up3 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -125,7 +128,7 @@
     display: inline-block;
     width: 60px;
   }
-  .signUp {
+  .sign-up2 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -136,14 +139,14 @@
     width: 132px;
     height: 48px;
   }
-  .signInSignUp {
+  .sign-in-sign-up1 {
     position: absolute;
     top: 26px;
     left: 1127px;
     width: 201px;
     height: 48px;
   }
-  .themisAi {
+  .themis-ai2 {
     position: absolute;
     top: 28px;
     left: 39px;
@@ -153,7 +156,7 @@
     height: 29px;
     cursor: pointer;
   }
-  .logo1Icon {
+  .logo-1-icon2 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -162,14 +165,14 @@
     object-fit: cover;
     cursor: pointer;
   }
-  .logoTop {
+  .logo-top1 {
     position: absolute;
     top: 11px;
     left: 77px;
     width: 236px;
     height: 88px;
   }
-  .sidebarChild {
+  .sidebar-child {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -178,7 +181,7 @@
     width: 253px;
     height: 687.2px;
   }
-  .newChatChild {
+  .new-chat-child {
     position: absolute;
     top: calc(50% - 22.5px);
     left: calc(50% - 90px);
@@ -186,7 +189,7 @@
     width: 180px;
     height: 45px;
   }
-  .newChat1 {
+  .new-chat1 {
     position: absolute;
     top: calc(50% - 13.6px);
     left: calc(50% - 73px);
@@ -195,14 +198,14 @@
     width: 145px;
     height: 25.6px;
   }
-  .newChat {
+  .new-chat {
     position: absolute;
     top: calc(50% - 320.2px);
     left: calc(50% - 89.5px);
     width: 180px;
     height: 45px;
   }
-  .yourConversations {
+  .your-conversations {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -211,7 +214,7 @@
     align-items: center;
     width: 101px;
   }
-  .clearAll {
+  .clear-all {
     position: absolute;
     top: 0px;
     left: 161px;
@@ -221,12 +224,12 @@
     align-items: center;
     width: 47px;
   }
-  .yourConversationsParent {
+  .your-conversations-parent {
     width: 208px;
     position: relative;
     height: 20px;
   }
-  .sidebarInner {
+  .sidebar-inner {
     position: absolute;
     top: 83px;
     left: 7px;
@@ -249,7 +252,7 @@
     font-size: var(--font-size-lg);
     color: var(--color-white);
   }
-  .searchBarChild {
+  .search-bar-child {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -258,12 +261,12 @@
     width: 1041px;
     height: 47px;
   }
-  .vuesaxlinearsend2Icon {
+  .vuesaxlinearsend-2-icon {
     width: 24px;
     position: relative;
     height: 24px;
   }
-  .vuesaxlinearsend2Wrapper {
+  .vuesaxlinearsend-2-wrapper {
     position: absolute;
     top: 6px;
     left: 997px;
@@ -279,14 +282,14 @@
     padding: 10px;
     box-sizing: border-box;
   }
-  .searchBar {
+  .search-bar {
     position: absolute;
     top: 757px;
     left: 334px;
     width: 1041px;
     height: 47px;
   }
-  .aiSystem {
+  .ai-system {
     width: 100%;
     position: relative;
     background-color: var(--color-ghostwhite);
