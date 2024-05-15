@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.aiSystem">
     <img :class="$style.aiSystemChild" alt="" />
-    <img :class="$style.maskGroupIcon" alt="" src="/mask-group@2x.png" />
+
     <div :class="$style.signInSignUp">
       <button :class="$style.signIn" :autoFocus="true">Sign In</button>
       <button :class="$style.signUp" :autoFocus="true">
@@ -11,17 +11,13 @@
     </div>
     <div :class="$style.logoTop">
       <b :class="$style.themisAi" @click="onTHEMISAITextClick">THEMIS AI</b>
-      <img
-        :class="$style.logo1Icon"
-        alt=""
-        src="/logo-1@2x.png"
-        @click="onLogo1ImageClick"
-      />
+      <img :class="$style.logo1Icon" alt="" src="@/assets/logo.png" @click="onLogo1ImageClick"/>
     </div>
     <div :class="$style.sidebar">
       <div :class="$style.sidebarChild" />
       <div :class="$style.newChat">
-        <img :class="$style.newChatChild" alt="" src="/rectangle-44.svg" />
+        <div :class="$style.signUpChild" />
+        <button :class="$style.signUp1" :autoFocus="true">New Chat</button>
         <b :class="$style.newChat1">New Chat</b>
       </div>
       <div :class="$style.sidebarInner">
@@ -37,16 +33,16 @@
         <img
           :class="$style.vuesaxlinearsend2Icon"
           alt=""
-          src="/vuesaxlinearsend2.svg"
+          src="@/assets/vuesaxlinearsend2.png"
         />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-  import { defineComponent } from "vue";
+  import { User as UserIcon, ArrowRight } from '@element-plus/icons-vue';
 
-  export default defineComponent({
+  export default {
     name: "AISystem",
     methods: {
       onTHEMISAITextClick() {
@@ -56,7 +52,7 @@
         this.$router.push("/");
       },
     },
-  });
+  };
 </script>
 
 <style module>
