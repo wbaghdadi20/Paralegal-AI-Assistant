@@ -1,54 +1,56 @@
 <template>
   <div class="home">
-    <img class="home-child" alt="" />
-    <img class="mask-group-icon" alt="" src="@/assets/mask-group@2x.png" />
-    <div class="home-item" />
+    <div class="home-child" />
     <div class="questions">
       <b class="frequently-asked-questions">Frequently Asked Questions</b>
       <div class="question-1">
         <div class="question-1-child" />
         <b class="first-question">first question</b>
-        <img class="frame-icon" alt="" src="@/assets/frame.png" />
+        <img class="frame-icon" alt="" src="@/assets/frame.svg" />
       </div>
-      <div class="question-2">
-        <div class="rectangle-parent">
-          <div class="group-child" />
-          <b class="second-question">second question</b>
-          <img class="frame-icon" alt="" src="@/assets/frame1.png" />
-        </div>
+      <div class="rectangle-parent">
+        <div class="group-child" />
+        <b class="second-question">second question</b>
+        <img class="frame-icon" alt="" src="@/assets/frame1.svg" />
       </div>
       <div class="question-3">
         <div class="group-child" />
         <b class="second-question">third question</b>
-        <img class="frame-icon" alt="" src="@/assets/frame1.png" />
+        <img class="frame-icon" alt="" src="@/assets/frame1.svg" />
       </div>
       <div class="question-4">
         <div class="group-child" />
         <b class="second-question"> fourth question</b>
-        <img class="frame-icon" alt="" src="@/assets/frame1.png" />
+        <img class="frame-icon" alt="" src="@/assets/frame1.svg" />
       </div>
       <div class="question-5">
         <div class="group-child" />
         <b class="second-question">fifth question</b>
-        <img class="frame-icon" alt="" src="@/assets/frame1.png" />
+        <img class="frame-icon" alt="" src="@/assets/frame1.svg" />
       </div>
     </div>
     <div class="lets-get-in-touch">
-      <div class="lets-get-in-touch-parent">
-        <b class="lets-get-in">Let’s Get in Touch</b>
-        <div class="group-item" />
-        <b class="email">email</b>
-        <div class="group-inner" />
-        <div class="rectangle-div" />
-        <b class="name">name</b>
-        <b class="message">message</b>
-        <div class="exampleemailcom">example@email.com</div>
-        <div class="full-name">full name</div>
-        <div class="write-your-message">write your message....</div>
-        <div class="get-in-touch-wrapper">
-          <b class="get-in-touch">Get in Touch</b>
-        </div>
-      </div>
+      <b class="lets-get-in">Let’s Get in Touch</b>
+      <div class="lets-get-in-touch-child" />
+      <b class="email">email</b>
+      <div class="lets-get-in-touch-item" />
+      <div class="lets-get-in-touch-inner" />
+      <b class="name">name</b>
+      <b class="message">message</b>
+      <input
+        class="exampleemailcom"
+        placeholder="example@email.com"
+        type="text"
+      />
+      <input class="full-name" placeholder="full name" type="text" />
+      <input
+        class="write-your-message"
+        placeholder="write your message...."
+        type="text"
+      />
+      <button class="get-in-touch-wrapper">
+        <b class="get-in-touch">Get in Touch</b>
+      </button>
     </div>
     <div class="slogan">
       <b class="your-digital-legal-container">
@@ -57,15 +59,17 @@
         <p class="your-digital">Always Ready</p>
       </b>
       <div class="rectangle-group" @click="onGroupContainerClick">
-        <button class="rectangle-button" :autoFocus="true" />
+        <button class="group-item" :autoFocus="true" />
         <button class="get-started" :autoFocus="true">Get Started</button>
       </div>
     </div>
-    <div class="sign-in-sign-up">
-      <button class="sign-in" :autoFocus="true">Sign In</button>
-      <button class="sign-up" :autoFocus="true">
-        <div class="sign-up-child" />
-        <button class="sign-up1" :autoFocus="true">Sign Up</button>
+    <div class="sign-in-sign-up1">
+      <button class="sign-in1" :autoFocus="true" @click="onSignInClick">
+        Sign In
+      </button>
+      <button class="sign-up2" :autoFocus="true" @click="onSignUpClick">
+        <div class="sign-up-item" />
+        <button class="sign-up3" :autoFocus="true">Sign Up</button>
       </button>
     </div>
     <div class="check-our-work">
@@ -76,44 +80,42 @@
         <b class="pricing1">Pricing</b>
         <div class="blah">blah</div>
       </div>
-      <div class="pricing-block">
-        <div class="rectangle-container">
-          <div class="group-child1" />
-          <div class="group-child2" />
-          <b class="services">Services</b>
-          <div class="blah1">blah</div>
-          <b class="b">50</b>
-          <div class="mo">/mo</div>
-          <div class="group-parent">
-            <div class="parent">
-              <div class="div">1</div>
-              <img class="frame-icon5" alt="" src="@/assets/frame2.png" />
-            </div>
-            <div class="group">
-              <div class="div">2</div>
-              <img class="frame-icon5" alt="" src="@/assets/frame2.png" />
-            </div>
-            <div class="container">
-              <div class="div">3</div>
-              <img class="frame-icon5" alt="" src="@/assets/frame2.png" />
-            </div>
+      <div class="rectangle-container">
+        <div class="group-inner" />
+        <div class="rectangle-div" />
+        <b class="services">Services</b>
+        <div class="blah1">blah</div>
+        <b class="b">50</b>
+        <div class="mo">/mo</div>
+        <div class="group-parent">
+          <div class="parent">
+            <div class="div">1</div>
+            <img class="frame-icon5" alt="" src="@/assets/frame2.svg" />
           </div>
-          <div class="group-container">
-            <div class="group-div">
-              <div class="div">4</div>
-              <img class="frame-icon5" alt="" src="@/assets/frame2.png" />
-            </div>
-            <div class="group">
-              <div class="div">5</div>
-              <img class="frame-icon5" alt="" src="@/assets/frame2.png" />
-            </div>
-            <div class="parent2">
-              <div class="div">6</div>
-              <img class="frame-icon5" alt="" src="@/assets/frame2.png" />
-            </div>
+          <div class="group">
+            <div class="div">2</div>
+            <img class="frame-icon5" alt="" src="@/assets/frame2.svg" />
           </div>
-          <img class="frame-icon11" alt="" src="@/assets/frame3.png" />
+          <div class="container">
+            <div class="div">3</div>
+            <img class="frame-icon5" alt="" src="@/assets/frame2.svg" />
+          </div>
         </div>
+        <div class="group-container">
+          <div class="group-div">
+            <div class="div">4</div>
+            <img class="frame-icon5" alt="" src="@/assets/frame2.svg" />
+          </div>
+          <div class="group">
+            <div class="div">5</div>
+            <img class="frame-icon5" alt="" src="@/assets/frame2.svg" />
+          </div>
+          <div class="parent2">
+            <div class="div">6</div>
+            <img class="frame-icon5" alt="" src="@/assets/frame2.svg" />
+          </div>
+        </div>
+        <img class="frame-icon11" alt="" src="@/assets/frame3.svg" />
       </div>
     </div>
     <div class="top-bar">
@@ -123,98 +125,60 @@
         About
       </button>
       <button class="how-it-works" :autoFocus="true">How it Works</button>
-      <button class="services1" :autoFocus="true" :onClick="onServicesClick">
-        Services
-      </button>
+      <button class="service" :autoFocus="true">Service</button>
+      <button class="about-us" :autoFocus="true">About Us</button>
     </div>
     <div class="what-we-do">
       <b class="what-we-do1" data-scroll-to="whatWeDo">What We do</b>
-      <div class="what-we-do-block-1">
-        <div class="what-we-do-block-1-child" />
-        <div class="first">first</div>
-        <div class="blah2">blah</div>
-        <div class="what-we-do-block-1-item" />
-
-      </div>
-      <div class="what-we-do-block-2">
-        <div class="what-we-do-block-1-child" />
-        <div class="second">Second</div>
-        <div class="blah3">blah</div>
-        <div class="what-we-do-block-2-inner">
-          <div class="group-child3" />
+      <div class="frame-parent">
+        <div class="first-wrapper">
+          <div class="first">first</div>
         </div>
-
-      </div>
-      <div class="what-we-do-block-3">
-        <div class="what-we-do-block-1-child" />
-        <div class="third">Third</div>
-        <div class="blah4">blah</div>
-        <div class="what-we-do-block-3-inner">
-          <div class="group-child3" />
+        <div class="first-wrapper">
+          <div class="first">second</div>
         </div>
-
-      </div>
-      <div class="what-we-do-block-4">
-        <div class="what-we-do-block-4-child" />
-        <div class="forth">Forth</div>
-        <div class="blah5">blah</div>
-        <div class="what-we-do-block-4-inner">
-          <div class="group-child3" />
+        <div class="first-wrapper">
+          <div class="first">third</div>
         </div>
-
       </div>
     </div>
-    <div class="logo-top">
-      <b class="themis-ai">THEMIS AI</b>
-      <img class="logo-1-icon" alt="" src="@/assets/logo.png" />
+    <div class="logo-top1">
+      <b class="themis-ai1">THEMIS AI</b>
+      <img class="logo-1-icon1" alt="" src="@/assets/logo.png" />
     </div>
     <div class="bottom-contact-information">
-      <div
-        class="bottom-contact-information-child"
-        data-scroll-to="rectangle"
-      />
+      <div class="bottom-contact-information-child" />
       <div class="basic-info">basic info</div>
       <div class="home-parent">
         <div class="home2">Home</div>
         <div class="about1">About</div>
         <div class="how-it-works1">How it Works</div>
-        <div class="services2">Services</div>
+        <div class="services1">Services</div>
       </div>
       <div class="logo-bottom">
-        <b class="themis-ai1">THEMIS AI</b>
-        <img class="logo-1-icon1" alt="" src="@/assets/logo.png" />
-      </div>
-    </div>
-    <div class="frame-parent">
-      <div class="first-wrapper">
-        <div class="first1">first</div>
-      </div>
-      <div class="first-wrapper">
-        <div class="first1">second</div>
-      </div>
-      <div class="first-wrapper">
-        <div class="first1">third</div>
+        <b class="themis-ai2">THEMIS AI</b>
+        <img class="logo-1-icon2" alt="" src="@/assets/logo.png" />
       </div>
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
   import { defineComponent } from "vue";
 
   export default defineComponent({
     name: "Home",
     methods: {
       onGroupContainerClick() {
-        this.$router.push("/ai-system");
+        this.$router.push("/");
+      },
+      onSignInClick() {
+        // Please sync "sign in" to the project
+      },
+      onSignUpClick() {
+        // Please sync "sign up" to the project
       },
       onAboutClick() {
         const anchor = document.querySelector("[data-scroll-to='whatWeDo']");
-        if (anchor) {
-          anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-        }
-      },
-      onServicesClick() {
-        const anchor = document.querySelector("[data-scroll-to='rectangle']");
         if (anchor) {
           anchor.scrollIntoView({ block: "start", behavior: "smooth" });
         }
@@ -224,33 +188,6 @@
 </script>
 <style scoped>
   .home-child {
-    position: absolute;
-    height: 6.98%;
-    width: 210.86%;
-    top: 98.32%;
-    right: -67.15%;
-    bottom: -5.3%;
-    left: -43.71%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    display: none;
-  }
-  .mask-group-icon {
-    position: absolute;
-    height: 21.55%;
-    width: 81.13%;
-    top: -4.36%;
-    right: 9.41%;
-    bottom: 82.8%;
-    left: 9.47%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: contain;
-    display: none;
-  }
-  .home-item {
     position: absolute;
     top: 3853.5px;
     left: -0.5px;
@@ -266,6 +203,7 @@
     font-size: var(--font-size-41xl);
     line-height: 120%;
     display: inline-block;
+    color: var(--color-white);
     width: 454px;
   }
   .question-1-child {
@@ -321,13 +259,6 @@
   }
   .rectangle-parent {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 696px;
-    height: 70px;
-  }
-  .question-2 {
-    position: absolute;
     top: 153px;
     left: 451px;
     width: 696px;
@@ -360,17 +291,19 @@
     left: calc(50% - 539px);
     width: 1147px;
     height: 481px;
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-100);
   }
   .lets-get-in {
     position: absolute;
     top: calc(50% - 360px);
-    left: calc(50% - 252px);
+    left: calc(50% - 250px);
     font-size: var(--font-size-41xl);
     line-height: 120%;
     font-family: var(--font-raleway);
     text-align: center;
   }
-  .group-item {
+  .lets-get-in-touch-child {
     position: absolute;
     top: 175px;
     left: 0px;
@@ -387,7 +320,7 @@
     left: calc(50% - 341px);
     line-height: 120%;
   }
-  .group-inner {
+  .lets-get-in-touch-item {
     position: absolute;
     top: 293px;
     left: 0px;
@@ -398,7 +331,7 @@
     height: 70px;
     mix-blend-mode: normal;
   }
-  .rectangle-div {
+  .lets-get-in-touch-inner {
     position: absolute;
     top: 411px;
     left: 0px;
@@ -422,36 +355,59 @@
     line-height: 120%;
   }
   .exampleemailcom {
+    border: none;
+    outline: none;
+    font-family: var(--paragraph);
+    font-size: var(--font-size-xl);
+    background-color: transparent;
     position: absolute;
     top: 195px;
     left: 32px;
-    font-size: var(--font-size-xl);
     line-height: 150%;
     color: var(--color-lightslategray);
+    text-align: left;
   }
   .full-name {
+    border: none;
+    outline: none;
+    font-family: var(--paragraph);
+    font-size: var(--font-size-xl);
+    background-color: transparent;
     position: absolute;
     top: 313px;
     left: 32px;
-    font-size: var(--font-size-xl);
     line-height: 150%;
     color: var(--color-lightslategray);
+    text-align: left;
   }
   .write-your-message {
+    border: none;
+    outline: none;
+    font-family: var(--paragraph);
+    font-size: var(--font-size-xl);
+    background-color: transparent;
     position: absolute;
     top: 431px;
     left: 32px;
-    font-size: var(--font-size-xl);
     line-height: 150%;
     color: var(--color-lightslategray);
+    text-align: left;
   }
   .get-in-touch {
     position: absolute;
     top: 19px;
     left: 301px;
+    font-size: var(--paragraph-size);
     line-height: 150%;
+    font-family: var(--font-raleway);
+    color: var(--color-darkslategray);
+    text-align: center;
   }
   .get-in-touch-wrapper {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: var(--color-white);
     position: absolute;
     height: 8.61%;
     width: 100%;
@@ -460,19 +416,7 @@
     bottom: 0%;
     left: 0%;
     border-radius: var(--br-3xs);
-    background-color: var(--color-darkslategray);
     overflow: hidden;
-    text-align: center;
-    font-size: var(--paragraph-size);
-    color: var(--color-white);
-    font-family: var(--font-raleway);
-  }
-  .lets-get-in-touch-parent {
-    position: absolute;
-    top: calc(50% - 360px);
-    left: calc(50% - 348px);
-    width: 696px;
-    height: 720px;
   }
   .lets-get-in-touch {
     position: absolute;
@@ -480,6 +424,7 @@
     left: calc(50% - 348px);
     width: 696px;
     height: 720px;
+    font-size: var(--font-size-lg);
     font-family: var(--paragraph);
   }
   .your-digital {
@@ -494,11 +439,11 @@
     width: 1009px;
     height: 229px;
   }
-  .rectangle-button {
+  .group-item {
     cursor: pointer;
     border: none;
     padding: 0;
-    background-color: var(--color-darkslategray);
+    background-color: var(--color-white);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -518,7 +463,7 @@
     line-height: 150%;
     font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-white);
+    color: var(--color-darkslategray);
     text-align: center;
     display: inline-block;
   }
@@ -538,9 +483,8 @@
     height: 315px;
     text-align: center;
     font-size: 73.3px;
-    color: var(--color-darkslategray);
   }
-  .sign-in {
+  .sign-in1 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -550,22 +494,23 @@
     left: 0px;
     font-size: var(--paragraph-size);
     line-height: 150%;
+    font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-gray-100);
+    color: var(--color-white);
     text-align: left;
     display: inline-block;
     opacity: 0.8;
   }
-  .sign-up-child {
+  .sign-up-item {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-3xs);
-    background-color: var(--color-darkslategray);
+    background-color: var(--color-white);
     width: 132px;
     height: 48px;
   }
-  .sign-up1 {
+  .sign-up3 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -577,12 +522,12 @@
     line-height: 150%;
     font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-white);
+    color: var(--color-darkslategray);
     text-align: center;
     display: inline-block;
     width: 60px;
   }
-  .sign-up {
+  .sign-up2 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -593,7 +538,7 @@
     width: 132px;
     height: 48px;
   }
-  .sign-in-sign-up {
+  .sign-in-sign-up1 {
     position: absolute;
     top: 26px;
     left: 1127px;
@@ -622,7 +567,6 @@
     left: calc(50% - 227px);
     width: 455px;
     height: 72px;
-    font-size: var(--font-size-41xl);
   }
   .pricing1 {
     position: absolute;
@@ -648,22 +592,22 @@
     width: 282px;
     height: 109px;
   }
-  .group-child1 {
+  .group-inner {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-xl);
-    background-color: #4e47ff;
+    background-color: #f8f8f8;
     width: 624px;
     height: 497px;
     mix-blend-mode: linear-dodge;
   }
-  .group-child2 {
+  .rectangle-div {
     position: absolute;
     top: 345px;
     left: 22px;
     border-radius: var(--br-3xs);
-    background-color: var(--color-ghostwhite);
+    background-color: #f5f8ff;
     width: 579px;
     height: 127px;
     mix-blend-mode: normal;
@@ -774,17 +718,11 @@
   .rectangle-container {
     position: absolute;
     top: 0px;
-    left: 0px;
-    width: 624px;
-    height: 497px;
-  }
-  .pricing-block {
-    position: absolute;
-    top: 0px;
     left: 419px;
     width: 624px;
     height: 497px;
     font-size: var(--font-size-sm);
+    color: var(--color-gray-100);
     font-family: var(--paragraph);
   }
   .pricing {
@@ -793,17 +731,16 @@
     left: calc(50% - 507px);
     width: 1043px;
     height: 497px;
-    font-size: var(--font-size-41xl);
   }
   .top-bar-child {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-xl);
-    background-color: var(--color-gray-200);
+    background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid var(--color-white);
     box-sizing: border-box;
-    width: 499px;
+    width: 607px;
     height: 68px;
   }
   .home1 {
@@ -813,9 +750,10 @@
     background-color: transparent;
     position: absolute;
     top: 22px;
-    left: 56px;
+    left: 57px;
     font-size: var(--paragraph-size);
     line-height: 150%;
+    font-weight: 700;
     font-family: var(--paragraph);
     color: var(--color-gray-100);
     text-align: left;
@@ -828,9 +766,10 @@
     background-color: transparent;
     position: absolute;
     top: 22px;
-    left: 149px;
+    left: 150px;
     font-size: var(--paragraph-size);
     line-height: 150%;
+    font-weight: 700;
     font-family: var(--paragraph);
     color: var(--color-gray-100);
     text-align: left;
@@ -843,246 +782,101 @@
     background-color: transparent;
     position: absolute;
     top: 22px;
-    left: 243px;
+    left: 244px;
     font-size: var(--paragraph-size);
     line-height: 150%;
+    font-weight: 700;
     font-family: var(--paragraph);
     color: var(--color-gray-100);
     text-align: left;
     display: inline-block;
   }
-  .services1 {
+  .service {
     cursor: pointer;
     border: none;
     padding: 0;
     background-color: transparent;
     position: absolute;
     top: 22px;
-    left: 391px;
+    left: 389px;
     font-size: var(--paragraph-size);
     line-height: 150%;
-    font-family: var(--paragraph);
+    font-weight: 700;
+    font-family: var(--font-raleway);
+    color: var(--color-gray-100);
+    text-align: left;
+    display: inline-block;
+  }
+  .about-us {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 22px;
+    left: 482px;
+    font-size: var(--paragraph-size);
+    line-height: 150%;
+    font-weight: 700;
+    font-family: var(--font-raleway);
     color: var(--color-gray-100);
     text-align: left;
     display: inline-block;
   }
   .top-bar {
     position: absolute;
-    top: 16px;
-    left: 471px;
-    width: 499px;
+    top: 19px;
+    left: 417px;
+    width: 607px;
     height: 68px;
   }
   .what-we-do1 {
     position: absolute;
-    top: calc(50% - 178px);
-    left: calc(50% - 608px);
-    font-size: var(--font-size-41xl);
+    top: calc(50% - 274.5px);
+    left: calc(50% - 502.5px);
     line-height: 120%;
-    font-family: var(--font-raleway);
-  }
-  .what-we-do-block-1-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: var(--br-3xs);
-    background: linear-gradient(121.9deg, #1c1c1c, #050505);
-    border: 1px solid var(--color-white);
-    box-sizing: border-box;
-    width: 280px;
-    height: 252px;
-    mix-blend-mode: linear-dodge;
   }
   .first {
-    position: absolute;
-    top: calc(50% - 34px);
-    left: calc(50% - 114px);
-    line-height: 120%;
-    font-weight: 600;
+    position: relative;
   }
-  .blah2 {
-    position: absolute;
-    top: 134px;
-    left: 26px;
-    font-size: var(--font-size-sm);
-    line-height: 150%;
-    color: var(--color-lightslategray);
-    display: inline-block;
-    width: 231px;
-  }
-  .what-we-do-block-1-item {
-    position: absolute;
-    top: 29px;
-    left: 26px;
-    border-radius: var(--br-4xs);
-    background-color: var(--color-ghostwhite);
-    width: 44px;
-    height: 44px;
-    mix-blend-mode: normal;
-  }
-  .block1-icon {
-    position: absolute;
-    top: 39px;
-    left: 36px;
-    width: 24px;
-    height: 24px;
-    overflow: hidden;
-  }
-  .what-we-do-block-1 {
-    position: absolute;
-    top: 104px;
-    left: 0px;
-    width: 280px;
-    height: 252px;
-  }
-  .second {
-    position: absolute;
-    top: calc(50% - 34px);
-    left: calc(50% - 116px);
-    line-height: 120%;
-    font-weight: 600;
-  }
-  .blah3 {
-    position: absolute;
-    top: 134px;
-    left: 24px;
-    font-size: var(--font-size-sm);
-    line-height: 150%;
-    color: var(--color-lightslategray);
-    display: inline-block;
-    width: 231px;
-  }
-  .group-child3 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: var(--br-4xs);
-    background-color: var(--color-ghostwhite);
-    width: 44px;
-    height: 44px;
-  }
-  .what-we-do-block-2-inner {
-    position: absolute;
-    top: 29px;
-    left: 24px;
-    width: 44px;
-    height: 44px;
-  }
-  .frame-icon12 {
-    position: absolute;
-    top: 39px;
-    left: 34px;
-    width: 24px;
-    height: 24px;
-    overflow: hidden;
-  }
-  .what-we-do-block-2 {
-    position: absolute;
-    top: 104px;
-    left: 312px;
-    width: 280px;
-    height: 252px;
-  }
-  .third {
-    position: absolute;
-    top: calc(50% - 34px);
-    left: calc(50% - 118px);
-    line-height: 120%;
-    font-weight: 600;
-  }
-  .blah4 {
-    position: absolute;
-    top: 134px;
-    left: 22px;
-    font-size: var(--font-size-sm);
-    line-height: 150%;
-    color: var(--color-lightslategray);
-    display: inline-block;
-    width: 231px;
-  }
-  .what-we-do-block-3-inner {
-    position: absolute;
-    top: 29px;
-    left: 22px;
-    width: 44px;
-    height: 44px;
-  }
-  .frame-icon13 {
-    position: absolute;
-    top: 40px;
-    left: 32px;
-    width: 24px;
-    height: 24px;
-    overflow: hidden;
-  }
-  .what-we-do-block-3 {
-    position: absolute;
-    top: 104px;
-    left: 624px;
-    width: 280px;
-    height: 252px;
-  }
-  .what-we-do-block-4-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+  .first-wrapper {
     border-radius: var(--br-3xs);
-    background: linear-gradient(121.9deg, #1c1c1c, #050505);
-    border: 1px solid var(--color-white);
-    box-sizing: border-box;
-    width: 289px;
-    height: 252px;
-    mix-blend-mode: linear-dodge;
-  }
-  .forth {
-    position: absolute;
-    top: calc(50% - 34px);
-    left: calc(50% - 115.5px);
-    line-height: 120%;
-    font-weight: 600;
-  }
-  .blah5 {
-    position: absolute;
-    top: 134px;
-    left: 29px;
-    font-size: var(--font-size-sm);
-    line-height: 150%;
-    color: var(--color-lightslategray);
-    display: inline-block;
-    width: 231px;
-  }
-  .what-we-do-block-4-inner {
-    position: absolute;
-    top: 29px;
-    left: 29px;
-    width: 44px;
-    height: 44px;
-  }
-  .frame-icon14 {
-    position: absolute;
-    top: 39px;
-    left: 39px;
-    width: 24px;
-    height: 24px;
+    background-color: var(--color-white);
+    border: 3px solid var(--color-darkslategray);
     overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-176xl) var(--padding-457xl);
   }
-  .what-we-do-block-4 {
+  .frame-parent {
     position: absolute;
-    top: 104px;
-    left: 927px;
-    width: 289px;
-    height: 252px;
+    width: 100%;
+    top: 98px;
+    right: 0px;
+    left: 0px;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 56px;
+    box-sizing: border-box;
+    gap: 68px;
+    font-size: var(--font-size-31xl);
+    color: var(--color-black);
+    font-family: var(--paragraph);
   }
   .what-we-do {
     position: absolute;
     top: calc(50% - 2027.5px);
-    left: calc(50% - 608px);
-    width: 1216px;
-    height: 356px;
-    font-size: var(--font-size-lgi-8);
-    font-family: var(--paragraph);
+    left: calc(50% - 691px);
+    width: 1171px;
+    height: 549px;
   }
-  .themis-ai {
+  .themis-ai1 {
     position: absolute;
     top: 28px;
     left: 39px;
@@ -1091,7 +885,7 @@
     width: 197px;
     height: 29px;
   }
-  .logo-1-icon {
+  .logo-1-icon1 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -1099,7 +893,7 @@
     height: 88px;
     object-fit: cover;
   }
-  .logo-top {
+  .logo-top1 {
     position: absolute;
     top: 11px;
     left: 77px;
@@ -1107,7 +901,6 @@
     height: 88px;
     text-align: center;
     font-size: var(--font-size-xl);
-    color: var(--color-black);
   }
   .bottom-contact-information-child {
     position: absolute;
@@ -1147,7 +940,7 @@
     left: 187px;
     line-height: 150%;
   }
-  .services2 {
+  .services1 {
     position: absolute;
     top: 0px;
     left: 335px;
@@ -1160,7 +953,7 @@
     width: 401px;
     height: 24px;
   }
-  .themis-ai1 {
+  .themis-ai2 {
     position: absolute;
     top: 36px;
     left: 63.6px;
@@ -1169,7 +962,7 @@
     width: 255.4px;
     height: 37.2px;
   }
-  .logo-1-icon1 {
+  .logo-1-icon2 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -1198,48 +991,15 @@
     color: var(--color-lightslategray);
     font-family: var(--paragraph);
   }
-  .first1 {
-    position: relative;
-  }
-  .first-wrapper {
-    border-radius: var(--br-3xs);
-    background-color: var(--color-white);
-    border: 3px solid var(--color-darkslategray);
-    overflow: hidden;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-176xl) var(--padding-457xl);
-  }
-  .frame-parent {
-    position: absolute;
-    width: calc(100% - 269px);
-    top: 1660px;
-    right: 159px;
-    left: 110px;
-    overflow-x: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 0px 56px;
-    box-sizing: border-box;
-    gap: 68px;
-    font-size: var(--font-size-31xl);
-    color: var(--color-black);
-    font-family: var(--paragraph);
-  }
   .home {
     width: 100%;
     position: relative;
-    background-color: var(--color-ghostwhite);
+    background-color: var(--color-darkslategray);
     height: 5371px;
     overflow: hidden;
     text-align: left;
-    font-size: var(--font-size-lg);
-    color: var(--color-gray-100);
+    font-size: var(--font-size-41xl);
+    color: var(--color-white);
     font-family: var(--font-raleway);
   }
 </style>
