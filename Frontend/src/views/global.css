@@ -1,33 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 body {
   margin: 0;
   line-height: normal;
 }
 :root {
   /* fonts */
-  --paragraph: Inter;
   --font-raleway: Raleway;
+  --paragraph: Inter;
 
   /* font sizes */
-  --font-size-31xl: 50px;
-  --font-size-11xl: 30px;
-  --paragraph-size: 16px;
-  --font-size-xl: 20px;
   --font-size-sm: 14px;
-  --font-size-lgi-8: 19.8px;
-  --font-size-41xl: 60px;
   --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --paragraph-size: 16px;
+  --font-size-11xl: 30px;
+  --font-size-31xl: 50px;
+  --font-size-41xl: 60px;
 
   /* Colors */
-  --color-ghostwhite: #f5f8ff;
-  --color-white: #fff;
   --color-darkslategray: #2d344b;
+  --color-gray-100: #252432;
+  --color-white: #fff;
   --color-black: #000;
   --color-lightslategray: #8987a1;
   --color-lavender: #d6dded;
-  --color-gray-100: #252432;
-  --color-gray-200: rgba(255, 255, 255, 0.6);
 
   /* Paddings */
   --padding-176xl: 195px;
@@ -35,6 +32,5 @@ body {
 
   /* Border radiuses */
   --br-3xs: 10px;
-  --br-4xs: 9px;
   --br-xl: 20px;
 }
