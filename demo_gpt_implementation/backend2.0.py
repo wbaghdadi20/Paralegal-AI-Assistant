@@ -66,7 +66,7 @@ def upload_files(thread_id, directory_path):
                     )
     return file, file_flag
 
-def continue_conversation(thread_id_question_preprocess, thread_id_answers_demo, user_message):
+def continue_conversation(thread_id_question_preprocess, thread_id_answers_demo, user_message,file_ids=None, file_flag=0):
     # add user message into thread
     message = client.beta.threads.messages.create(
         thread_id=thread_id_question_preprocess,
@@ -98,11 +98,20 @@ def continue_conversation(thread_id_question_preprocess, thread_id_answers_demo,
     preprocessed_question = messages[0].content[0].text.value
 
     # generate final answers
-    message = client.beta.threads.messages.create(
-        thread_id=thread_id_answers_demo,
-        role="user",
-        content=preprocessed_question
-    )
+    # 生成最终答案
+    if file_flag == 1:
+        message = client.beta.threads.messages.create(
+            thread_id=thread_id_answers_demo,
+            role="user",
+            content=preprocessed_question,
+            attachments=[{"file_id": file_ids, "tools": [{"type": "file_search"}]}]
+        )
+    else:
+        message = client.beta.threads.messages.create(
+            thread_id=thread_id_answers_demo,
+            role="user",
+            content=preprocessed_question
+        )
 
     run = client.beta.threads.runs.create(
         thread_id=thread_id_answers_demo,
@@ -134,11 +143,11 @@ def continue_conversation(thread_id_question_preprocess, thread_id_answers_demo,
 thread_id_question_preprocess, thread_id_answers_demo = create_new_conversation()
 print(f"New conversation started with threads: {thread_id_question_preprocess}, {thread_id_answers_demo}")
 
-# uploaded file into new conversation
+# upload file into conversation
 directory_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 file_ids, file_flag = upload_files(thread_id_question_preprocess, directory_path)
 
 # continue current conversation
 user_message = "I am an international student and my visa is due soon, I am wondering how long can I stay in the US legally?"
-response = continue_conversation(thread_id_question_preprocess, thread_id_answers_demo, user_message)
+response = continue_conversation(thread_id_question_preprocess, thread_id_answers_demo, user_message,file_ids if file_flag else None, file_flag)
 print(f"Assistant response: {response}")
