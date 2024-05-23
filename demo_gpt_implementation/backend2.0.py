@@ -130,15 +130,15 @@ def continue_conversation(thread_id_question_preprocess, thread_id_answers_demo,
     return response_message
 
 
-# 创建新对话
+# create new conversation
 thread_id_question_preprocess, thread_id_answers_demo = create_new_conversation()
 print(f"New conversation started with threads: {thread_id_question_preprocess}, {thread_id_answers_demo}")
 
-# 上传文件到新对话
+# uploaded file into new conversation
 directory_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 file_ids, file_flag = upload_files(thread_id_question_preprocess, directory_path)
 
-# 继续当前对话
+# continue current conversation
 user_message = "I am an international student and my visa is due soon, I am wondering how long can I stay in the US legally?"
 response = continue_conversation(thread_id_question_preprocess, thread_id_answers_demo, user_message)
 print(f"Assistant response: {response}")
