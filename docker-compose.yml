@@ -1,0 +1,20 @@
+name: paralegal-ai
+
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "${BACKEND_PORT}:5001"
+    networks:
+      - app-network
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "${FRONTEND_PORT}:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

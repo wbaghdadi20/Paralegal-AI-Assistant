@@ -33,3 +33,16 @@ npm run build
 ```sh
 npm run lint
 ```
+
+
+## Docker Setup
+
+### Build Docker Image
+```
+docker build -t paralegal-ai-image .
+```
+
+### Run Docker Image
+```
+docker run -d -p 3000:80 --name paralegal-ai paralegal-ai-image
+```

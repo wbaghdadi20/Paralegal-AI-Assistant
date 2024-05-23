@@ -33,3 +33,15 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Docker Setup
+
+### Build and Run Frontend and Backend Docker Containers (Use on first time)
+```
+docker-compose up --build
+```
+
+### Run docker containers
+```
+docker-compose up
+```
