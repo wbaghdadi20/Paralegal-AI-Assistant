@@ -38,10 +38,10 @@ npm run lint
 
 ### Build and Run Frontend and Backend Docker Containers (Use on first time)
 ```
-docker-compose up --build
+docker compose up --build
 ```
 
 ### Run docker containers
 ```
-docker-compose up
+docker compose up
 ```
