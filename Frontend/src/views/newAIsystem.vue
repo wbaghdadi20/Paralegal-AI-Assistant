@@ -1,18 +1,18 @@
 <template>
   <div class="ai-system">
-    <img class="ai-system-child" alt="" />
-    <img class="mask-group-icon1" alt="" src="@/assets/mask-group@2x.png" />
-    <div class="sign-in-sign-up1">
-      <button class="sign-in1" :autoFocus="true">Sign In</button>
-      <button class="sign-up2" :autoFocus="true">
-        <div class="sign-up-item" />
-        <button class="sign-up3" :autoFocus="true">Sign Up</button>
+    <div class="sign-in-sign-up">
+      <button class="sign-in" :autoFocus="true" @click="onSignInClick">
+        Sign In
+      </button>
+      <button class="sign-up" :autoFocus="true" @click="onSignUpClick">
+        <div class="sign-up-child" />
+        <button class="sign-up1" :autoFocus="true">Sign Up</button>
       </button>
     </div>
-    <div class="logo-top1">
-      <b class="themis-ai2" @click="onTHEMISAITextClick">THEMIS AI</b>
+    <div class="logo-top">
+      <b class="themis-ai" @click="onTHEMISAITextClick">THEMIS AI</b>
       <img
-        class="logo-1-icon2"
+        class="logo-1-icon"
         alt=""
         src="@/assets/logo.png"
         @click="onLogo1ImageClick"
@@ -21,7 +21,7 @@
     <div class="sidebar">
       <div class="sidebar-child" />
       <div class="new-chat">
-
+        <img class="new-chat-child" alt="" src="@/assets/newchatbar.png" />
         <b class="new-chat1">New Chat</b>
       </div>
       <div class="sidebar-inner">
@@ -32,28 +32,38 @@
       </div>
     </div>
     <div class="search-bar">
-      <div class="search-bar-child" />
+      <input
+        class="ask-paralegal-ai"
+        placeholder="ask Paralegal AI Assistent"
+        type="text"
+      />
       <div class="vuesaxlinearsend-2-wrapper">
         <img
           class="vuesaxlinearsend-2-icon"
           alt=""
-          src="@/assets/vuesaxlinearsend2.png"
+          src="@/assets/send.png"
         />
       </div>
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
   import { defineComponent } from "vue";
 
   export default defineComponent({
     name: "AISystem",
     methods: {
+      onSignInClick() {
+        // Please sync "sign in" to the project
+      },
+      onSignUpClick() {
+        // Please sync "sign up" to the project
+      },
       onTHEMISAITextClick() {
-        this.$router.push("/");
+        this.$router.push("/home");
       },
       onLogo1ImageClick() {
-        this.$router.push("/");
+        this.$router.push("/home");
       },
     },
   });
@@ -72,7 +82,7 @@
     max-height: 100%;
     display: none;
   }
-  .mask-group-icon1 {
+  .mask-group-icon {
     position: absolute;
     height: 143.03%;
     width: 81.13%;
@@ -86,7 +96,7 @@
     object-fit: contain;
     display: none;
   }
-  .sign-in1 {
+  .sign-in {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -96,22 +106,22 @@
     left: 0px;
     font-size: var(--paragraph-size);
     line-height: 150%;
+    font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-gray-100);
+    color: var(--color-white);
     text-align: left;
     display: inline-block;
-    opacity: 0.8;
   }
-  .sign-up-item {
+  .sign-up-child {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-3xs);
-    background-color: var(--color-darkslategray);
+    background-color: var(--color-white);
     width: 132px;
     height: 48px;
   }
-  .sign-up3 {
+  .sign-up1 {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -123,12 +133,12 @@
     line-height: 150%;
     font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-white);
+    color: var(--color-darkslategray);
     text-align: center;
     display: inline-block;
     width: 60px;
   }
-  .sign-up2 {
+  .sign-up {
     cursor: pointer;
     border: none;
     padding: 0;
@@ -139,14 +149,14 @@
     width: 132px;
     height: 48px;
   }
-  .sign-in-sign-up1 {
+  .sign-in-sign-up {
     position: absolute;
     top: 26px;
     left: 1127px;
     width: 201px;
     height: 48px;
   }
-  .themis-ai2 {
+  .themis-ai {
     position: absolute;
     top: 28px;
     left: 39px;
@@ -156,7 +166,7 @@
     height: 29px;
     cursor: pointer;
   }
-  .logo-1-icon2 {
+  .logo-1-icon {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -165,7 +175,7 @@
     object-fit: cover;
     cursor: pointer;
   }
-  .logo-top1 {
+  .logo-top {
     position: absolute;
     top: 11px;
     left: 77px;
@@ -177,7 +187,7 @@
     top: 0px;
     left: 0px;
     border-radius: 26px;
-    background-color: var(--color-gray-200);
+    background-color: var(--color-white);
     width: 253px;
     height: 687.2px;
   }
@@ -241,25 +251,31 @@
     justify-content: flex-start;
     text-align: left;
     font-size: var(--font-size-sm);
-    color: #6a6a6a;
+    color: #6e6e6e;
   }
   .sidebar {
     position: absolute;
-    top: 116.8px;
+    top: 103.8px;
     left: 44px;
     width: 253px;
     height: 687.2px;
     font-size: var(--font-size-lg);
-    color: var(--color-white);
   }
-  .search-bar-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: var(--br-3xs);
-    background-color: #fbfcff;
-    width: 1041px;
-    height: 47px;
+  .ask-paralegal-ai {
+    border: none;
+    outline: none;
+    font-family: var(--font-raleway);
+    font-size: var(--font-size-sm);
+    background-color: transparent;
+    width: 971px;
+    position: relative;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.39);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    height: 33px;
+    flex-shrink: 0;
   }
   .vuesaxlinearsend-2-icon {
     width: 24px;
@@ -267,13 +283,10 @@
     height: 24px;
   }
   .vuesaxlinearsend-2-wrapper {
-    position: absolute;
-    top: 6px;
-    left: 997px;
+    width: 36px;
     box-shadow: 0px 4px 8px rgba(86, 97, 246, 0.25);
     border-radius: 60px;
     background-color: var(--color-darkslategray);
-    width: 36px;
     height: 36px;
     display: flex;
     flex-direction: row;
@@ -284,20 +297,29 @@
   }
   .search-bar {
     position: absolute;
-    top: 757px;
+    top: 751px;
     left: 334px;
-    width: 1041px;
-    height: 47px;
+    border-radius: var(--br-3xs);
+    background-color: #fbfcff;
+    width: 1034px;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 8px;
+    box-sizing: border-box;
+    gap: 11px;
   }
   .ai-system {
     width: 100%;
     position: relative;
-    background-color: var(--color-ghostwhite);
+    background-color: var(--color-darkslategray);
     height: 815px;
     overflow: hidden;
     text-align: center;
     font-size: var(--font-size-xl);
-    color: var(--color-black);
+    color: var(--color-white);
     font-family: var(--font-raleway);
   }
 </style>
