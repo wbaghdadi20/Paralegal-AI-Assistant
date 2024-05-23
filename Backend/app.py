@@ -16,6 +16,11 @@ client = OpenAI(
 )
 
 
+
+@app.route('/')
+def home():
+    return "working"
+
 @app.route('/askQuestion', methods=['POST'])
 def ask_question():
     filess = []

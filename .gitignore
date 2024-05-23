@@ -5,4 +5,4 @@ fine_tuning/JSONL
 fine_tuning/Training-Files
 Backend/.env
 PDF/
-.gitignore
+.DS_Store
