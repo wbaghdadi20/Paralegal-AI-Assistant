@@ -1,14 +1,5 @@
 <template>
   <div class="ai-system">
-    <div class="sign-in-sign-up">
-      <button class="sign-in" :autoFocus="true" @click="onSignInClick">
-        Sign In
-      </button>
-      <button class="sign-up" :autoFocus="true" @click="onSignUpClick">
-        <div class="sign-up-child" />
-        <button class="sign-up1" :autoFocus="true">Sign Up</button>
-      </button>
-    </div>
     <div class="logo-top">
       <b class="themis-ai" @click="onTHEMISAITextClick">THEMIS AI</b>
       <img
@@ -22,12 +13,12 @@
       <div class="sidebar-child" />
       <div class="new-chat">
         <img class="new-chat-child" alt="" src="@/assets/newchatbar.png" />
-        <b class="new-chat1">New Chat</b>
+        <button class="new-chat1">New Chat</button>
       </div>
-      <div class="sidebar-inner">
+      <div class="your-conversations-clear-all">
         <div class="your-conversations-parent">
           <div class="your-conversations">Your conversations</div>
-          <div class="clear-all">Clear All</div>
+          <button class="clear-all">Clear All</button>
         </div>
       </div>
     </div>
@@ -53,12 +44,6 @@
   export default defineComponent({
     name: "AISystem",
     methods: {
-      onSignInClick() {
-        // Please sync "sign in" to the project
-      },
-      onSignUpClick() {
-        // Please sync "sign up" to the project
-      },
       onTHEMISAITextClick() {
         this.$router.push("/home");
       },
@@ -69,93 +54,6 @@
   });
 </script>
 <style scoped>
-  .ai-system-child {
-    position: absolute;
-    height: 6.98%;
-    width: 210.86%;
-    top: 98.32%;
-    right: -67.15%;
-    bottom: -5.3%;
-    left: -43.71%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    display: none;
-  }
-  .mask-group-icon {
-    position: absolute;
-    height: 143.03%;
-    width: 81.13%;
-    top: -65.1%;
-    right: 9.41%;
-    bottom: 22.07%;
-    left: 9.47%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: contain;
-    display: none;
-  }
-  .sign-in {
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    position: absolute;
-    top: 12px;
-    left: 0px;
-    font-size: var(--paragraph-size);
-    line-height: 150%;
-    font-weight: 700;
-    font-family: var(--font-raleway);
-    color: var(--color-white);
-    text-align: left;
-    display: inline-block;
-  }
-  .sign-up-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-white);
-    width: 132px;
-    height: 48px;
-  }
-  .sign-up1 {
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    position: absolute;
-    top: 12px;
-    left: 36px;
-    font-size: var(--paragraph-size);
-    line-height: 150%;
-    font-weight: 700;
-    font-family: var(--font-raleway);
-    color: var(--color-darkslategray);
-    text-align: center;
-    display: inline-block;
-    width: 60px;
-  }
-  .sign-up {
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    position: absolute;
-    top: 0px;
-    left: 69px;
-    width: 132px;
-    height: 48px;
-  }
-  .sign-in-sign-up {
-    position: absolute;
-    top: 26px;
-    left: 1127px;
-    width: 201px;
-    height: 48px;
-  }
   .themis-ai {
     position: absolute;
     top: 28px;
@@ -178,7 +76,7 @@
   .logo-top {
     position: absolute;
     top: 11px;
-    left: 77px;
+    left: 61px;
     width: 236px;
     height: 88px;
   }
@@ -200,10 +98,19 @@
     height: 45px;
   }
   .new-chat1 {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
     position: absolute;
     top: calc(50% - 13.6px);
     left: calc(50% - 73px);
+    font-size: var(--font-size-lg);
     line-height: 150%;
+    font-weight: 700;
+    font-family: var(--font-raleway);
+    color: var(--color-white);
+    text-align: center;
     display: inline-block;
     width: 145px;
     height: 25.6px;
@@ -220,26 +127,35 @@
     top: 0px;
     left: 0px;
     line-height: 20px;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    width: 101px;
+    width: 135px;
   }
   .clear-all {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
     position: absolute;
     top: 0px;
-    left: 161px;
+    left: 161.8px;
+    font-size: var(--font-size-sm);
     line-height: 20px;
+    font-weight: 500;
+    font-family: var(--font-raleway);
     color: #5661f6;
+    text-align: left;
     display: flex;
     align-items: center;
-    width: 47px;
+    width: 65px;
   }
   .your-conversations-parent {
-    width: 208px;
+    width: 226.8px;
     position: relative;
     height: 20px;
   }
-  .sidebar-inner {
+  .your-conversations-clear-all {
     position: absolute;
     top: 83px;
     left: 7px;
@@ -249,9 +165,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    text-align: left;
-    font-size: var(--font-size-sm);
-    color: #6e6e6e;
   }
   .sidebar {
     position: absolute;
@@ -259,7 +172,10 @@
     left: 44px;
     width: 253px;
     height: 687.2px;
-    font-size: var(--font-size-lg);
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: #6e6e6e;
+    font-family: var(--font-raleway);
   }
   .ask-paralegal-ai {
     border: none;
@@ -292,7 +208,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: var(--padding-3xs);
     box-sizing: border-box;
   }
   .search-bar {
@@ -314,12 +230,12 @@
   .ai-system {
     width: 100%;
     position: relative;
-    background-color: var(--color-darkslategray);
+    background-color: var(--color-gray-100);
     height: 815px;
     overflow: hidden;
     text-align: center;
     font-size: var(--font-size-xl);
     color: var(--color-white);
-    font-family: var(--font-raleway);
+    font-family: var(--font-saira);
   }
 </style>
