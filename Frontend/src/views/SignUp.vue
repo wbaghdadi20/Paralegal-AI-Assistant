@@ -5,7 +5,7 @@
       <img
         class="logonobackground-1-icon"
         alt=""
-        src="@/assets/logoNoBackground.png"
+        src="/logonobackground-1@2x.png"
       />
     </div>
     <div class="sign-up-child" />
@@ -48,7 +48,7 @@
         <div class="first-name-child" />
         <input class="password6" placeholder="Password" type="text" />
       </div>
-      <div class="lets-get-in-touch1">
+      <div class="sighupsignup">
         <button class="sign-up5" :autoFocus="true">
           <div class="sign-up-item" />
           <button class="sign-up6" :autoFocus="true">Sign Up</button>
@@ -330,7 +330,7 @@
     position: relative;
     height: 48px;
   }
-  .lets-get-in-touch1 {
+  .sighupsignup {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
