@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Saira:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap");
 body {
@@ -11,7 +12,8 @@ body {
   /* fonts */
   --font-raleway: Raleway;
   --font-saira: Saira;
-  --paragraph: Inter;
+  --font-inter: Inter;
+  --font-roboto: Roboto;
   --font-poppins: Poppins;
   --font-anton: Anton;
 
@@ -19,28 +21,41 @@ body {
   --font-size-sm: 14px;
   --font-size-lg: 18px;
   --font-size-xl: 20px;
-  --paragraph-size: 16px;
+  --font-size-base: 16px;
   --font-size-mini: 15px;
-  --font-size-11xl: 30px;
+  --font-size-16xl: 35px;
+  --font-size-6xl: 25px;
   --font-size-21xl: 40px;
   --font-size-41xl: 60px;
+  --font-size-31xl: 50px;
+  --font-size-11xl: 30px;
   --font-size-7xl: 26px;
 
   /* Colors */
-  --color-gray-100: #001429;
-  --color-gray-200: #001327;
-  --color-gray-300: rgba(22, 22, 22, 0.3);
-  --color-darkslategray: #2d344b;
+  --color-gray-100: #252430;
+  --color-gray-200: #001429;
+  --color-gray-300: #001327;
+  --color-gray-400: rgba(22, 22, 22, 0.3);
+  --color-gray-500: rgba(255, 255, 255, 0.69);
+  --color-darkslategray-100: #3e3e3e;
+  --color-darkslategray-200: #2d344b;
   --color-white: #fff;
   --color-black: #000;
+  --color-lightgray: #d3d3d3;
+  --color-lavender-100: #e6eaf5;
+  --color-lavender-200: #e6e9f5;
+  --color-lightslategray-100: #858ba0;
+  --color-lightslategray-200: #8987a1;
   --color-silver: #c7c7c7;
-  --color-lightslategray: #8987a1;
   --color-darkolivegreen: #2f401f;
   --color-blueviolet: #9747ff;
 
   /* Gaps */
-  --gap-5xl: 24px;
+  --gap-xl: 20px;
+  --gap-9xl: 28px;
+  --gap-5xs: 8px;
   --gap-xs: 12px;
+  --gap-5xl: 24px;
   --gap-3xs: 10px;
 
   /* Paddings */
@@ -49,10 +64,21 @@ body {
   --padding-17xl: 36px;
   --padding-lg: 18px;
   --padding-42xl: 61px;
-  --padding-7xs: 6px;
+  --padding-11xl: 30px;
+  --padding-3xl: 22px;
+  --padding-35xl: 54px;
+  --padding-xl: 20px;
+  --padding-104xl: 123px;
+  --padding-9xl: 28px;
   --padding-base: 16px;
+  --padding-5xl: 24px;
+  --padding-6xs: 7px;
+  --padding-13xl: 32px;
+  --padding-7xs: 6px;
 
   /* Border radiuses */
   --br-3xs: 10px;
+  --br-xl: 20px;
+  --br-9xs: 4px;
   --br-8xs: 5px;
 }
