@@ -12,7 +12,7 @@
       <div class="check-our-work-child" />
       <b class="check-our-work1">Check our Work</b>
     </div>
-    <img class="check-our-work-pic" alt="" src="="@/assets/checkOurWorkPic.png" />
+    <img class="check-our-work-pic" alt="" src="@/assets/checkOurWorkPic.png" />
     <div class="what-we-do">
       <b class="what-we-do1">What We do</b>
     </div>
@@ -20,48 +20,29 @@
       <b class="themis-ai1">THEMIS AI</b>
       <img class="logo-1-icon1" alt="" src="@/assets/logo.png" />
     </div>
-    <div class="why-themis-ai-lets-get-in-t">
-      <div class="questions">
-        <b class="why-themis-ai">Why Themis AI</b>
-      </div>
-      <div class="lets-get-in-touch">
-        <div class="lets-get-in-touch-child" />
-        <b class="lets-get-in">Let’s Get in Touch</b>
-        <div class="lets-get-in-touch-item" />
-        <b class="email">email</b>
-        <div class="lets-get-in-touch-inner" />
-        <div class="rectangle-div" />
-        <b class="name">name</b>
-        <b class="message">message</b>
-        <input
-          class="exampleemailcom"
-          placeholder="example@email.com"
-          type="text"
-        />
-        <input class="full-name" placeholder="full name" type="text" />
-        <input
-          class="write-your-message"
-          placeholder="write your message...."
-          type="text"
-        />
-        <button class="get-in-touch-wrapper">
-          <b class="get-in-touch">Get in Touch</b>
-        </button>
-      </div>
-    </div>
-    <div class="bottom-contact-information">
-      <div class="bottom-contact-information-child" />
-      <div class="basic-info">basic info</div>
-      <div class="home-parent">
-        <div class="home1">Home</div>
-        <div class="about">About</div>
-        <div class="how-it-works">How it Works</div>
-        <div class="services">Services</div>
-      </div>
-      <div class="logo-bottom">
-        <b class="themis-ai2">THEMIS AI</b>
-        <img class="logo-1-icon2" alt="" src="@/assets/logo.png" />
-      </div>
+    <div class="lets-get-in-touch">
+      <div class="lets-get-in-touch-child" />
+      <b class="lets-get-in">Let’s Get in Touch</b>
+      <div class="lets-get-in-touch-item" />
+      <b class="email">email</b>
+      <div class="lets-get-in-touch-inner" />
+      <div class="rectangle-div" />
+      <b class="name">name</b>
+      <b class="message">message</b>
+      <input
+        class="exampleemailcom"
+        placeholder="example@email.com"
+        type="text"
+      />
+      <input class="full-name" placeholder="full name" type="text" />
+      <input
+        class="write-your-message"
+        placeholder="write your message...."
+        type="text"
+      />
+      <button class="get-in-touch-wrapper">
+        <b class="get-in-touch">Get in Touch</b>
+      </button>
     </div>
     <div class="doc-review">
       <div class="doc-review-child" />
@@ -70,16 +51,16 @@
         Rapidly identify critical information and potential risks within
         documents to safeguard your legal processes
       </div>
-      <img class="medical-icons" alt="" src="@/assets/DocReview.png" />
+      <img class="medical-icons" alt="" src="@/assets/Docreview.png" />
     </div>
     <div class="deposition-prep">
-      <div class="deposition-prep-child" />
+      <div class="doc-review-child" />
       <div class="doc-review1">Deposition Prep</div>
       <div class="craft-precise-deposition">
         Craft precise deposition questions and simulate the deposition
         environment to enhance your preparedness
       </div>
-      <img class="medical-icons1" alt="" src="="@/assets/DepositionPrep.png" />
+      <img class="medical-icons1" alt="" src="@/assets/DepositionPrep.png" />
     </div>
     <div class="legal-research">
       <div class="doc-review-child" />
@@ -88,7 +69,16 @@
         Expedite the retrieval and analysis of legal information to support your
         decision-making processes
       </div>
-      <img class="medical-icons2" alt="" src="@/assets/Legal Research.png" />
+      <img class="medical-icons2" alt="" src="@/assets/LegalResearch.png" />
+    </div>
+    <div class="personalized-writing-style">
+      <div class="doc-review-child" />
+      <div class="personalized-writing-style1">Personalized Writing Style</div>
+      <div class="ensure-the-ai-generated">
+        Ensure the AI-generated content matches the unique writing style of the
+        lawyer, saving significant time and effort in revisions.
+      </div>
+      <img class="medical-icons3" alt="" src="@/assets/PersonalizedWritingStyle.png" />
     </div>
     <div class="local-regulations">
       <div class="doc-review-child" />
@@ -97,7 +87,16 @@
         Provide summaries of local regulations tailored to specific
         jurisdictions to ensure your compliance and strategic alignment
       </div>
-      <img class="medical-icons3" alt="" src="@/assets/LocalRegulations.png" />
+      <img class="medical-icons4" alt="" src="@/assets/LocalRegulations.png" />
+    </div>
+    <div class="paralegal-training">
+      <div class="doc-review-child" />
+      <div class="doc-review1">Paralegal Training</div>
+      <div class="expedite-the-retrieval">
+        Streamline the onboarding process for new hires by providing new
+        employees with immediate
+      </div>
+      <img class="medical-icons5" alt="" src="@/assets/ParalegalTraining.png" />
     </div>
     <div class="case-analysis">
       <img class="case-analysis-child" />
@@ -106,7 +105,7 @@
         Assists in dissecting legal precedents and relevant laws to bolster your
         case strategies
       </div>
-      <img class="medical-icons4" alt="" src="@/assets/CaseAnalysis.png" />
+      <img class="medical-icons6" alt="" src="@/assets/CaseAnalysis.png" />
     </div>
     <div class="auto-fill">
       <div class="doc-review-child" />
@@ -115,7 +114,7 @@
         Automates the filling of repetitive information across multiple
         documents to ensure the accuracy and uniformity
       </div>
-      <img class="medical-icons5" alt="" src="@/assets/AutoFill.png" />
+      <img class="medical-icons7" alt="" src="@/assets/AutoFill.png" />
     </div>
     <div class="home-page-get-started">
       <button class="get-started1" :autoFocus="true" @click="onGetStartedClick">
@@ -124,16 +123,16 @@
     </div>
     <div class="top-bar">
       <div class="home-page-service">
-        <button class="price" :autoFocus="true">About</button>
+        <button class="about" :autoFocus="true">About</button>
       </div>
       <div class="home-page-service1">
-        <button class="price" :autoFocus="true">Service</button>
+        <button class="about" :autoFocus="true">Service</button>
       </div>
       <div class="home-page-service">
-        <button class="price" :autoFocus="true">Price</button>
+        <button class="about" :autoFocus="true">Price</button>
       </div>
       <div class="home-page-service3">
-        <button class="price" :autoFocus="true">How it works</button>
+        <button class="about" :autoFocus="true">FAQs</button>
       </div>
     </div>
     <div class="home-page-sign-in">
@@ -146,6 +145,19 @@
         Sign Up
       </button>
     </button>
+    <div class="questions">
+      <b class="why-themis-ai">Why Themis AI</b>
+    </div>
+    <div class="logo-top2">
+      <b class="themis-ai1">THEMIS AI</b>
+      <img class="logo-1-icon1" alt="" src="@/assets/logo.png" />
+    </div>
+    <div class="linkedin">Linkedin</div>
+    <div class="schedule-demo" @click="onScheduleDemoTextClick">
+      Schedule Demo
+    </div>
+    <div class="pricing" @click="onPricingTextClick">Pricing</div>
+    <div class="contact-us" @click="onScheduleDemoTextClick">Contact Us</div>
   </div>
 </template>
 <script>
@@ -162,6 +174,12 @@
       },
       onSignUpClick() {
         this.$router.push("/sign-up");
+      },
+      onScheduleDemoTextClick() {
+        this.$router.push("/contact-us");
+      },
+      onPricingTextClick() {
+        this.$router.push("/pricing");
       },
     },
   });
@@ -212,7 +230,7 @@
   }
   .check-our-work {
     position: absolute;
-    top: 1881px;
+    top: 2249px;
     left: 0px;
     width: 1440px;
     height: 961px;
@@ -222,7 +240,7 @@
   }
   .check-our-work-pic {
     position: absolute;
-    top: 2108px;
+    top: 2476px;
     left: -794px;
     width: 2122px;
     height: 1269px;
@@ -270,21 +288,6 @@
     text-align: center;
     font-size: var(--font-size-xl);
     font-family: var(--font-saira);
-  }
-  .why-themis-ai {
-    position: absolute;
-    top: calc(50% - 36px);
-    left: calc(50% - 214px);
-    line-height: 120%;
-    display: inline-block;
-    width: 428px;
-  }
-  .questions {
-    position: absolute;
-    top: calc(50% - 1008.5px);
-    left: calc(50% - 214px);
-    width: 428px;
-    height: 72px;
   }
   .lets-get-in-touch-child {
     position: absolute;
@@ -357,55 +360,47 @@
   .exampleemailcom {
     border: none;
     outline: none;
-    font-family: var(--paragraph);
+    font-family: var(--font-inter);
     font-size: var(--font-size-xl);
     background-color: transparent;
     position: absolute;
     top: 245px;
     left: 403px;
     line-height: 150%;
-    color: var(--color-lightslategray);
+    color: var(--color-lightslategray-200);
     text-align: left;
   }
   .full-name {
     border: none;
     outline: none;
-    font-family: var(--paragraph);
+    font-family: var(--font-inter);
     font-size: var(--font-size-xl);
     background-color: transparent;
     position: absolute;
     top: 363px;
     left: 403px;
     line-height: 150%;
-    color: var(--color-lightslategray);
+    color: var(--color-lightslategray-200);
     text-align: left;
   }
   .write-your-message {
     border: none;
     outline: none;
-    font-family: var(--paragraph);
+    font-family: var(--font-inter);
     font-size: var(--font-size-xl);
     background-color: transparent;
     position: absolute;
     top: 481px;
     left: 403px;
     line-height: 150%;
-    color: var(--color-lightslategray);
+    color: var(--color-lightslategray-200);
     text-align: left;
-  }
-  .topology-2-icon {
-    position: absolute;
-    top: -42px;
-    left: 770px;
-    width: 903.3px;
-    height: 889.3px;
-    display: none;
   }
   .get-in-touch {
     position: absolute;
     top: 19px;
     left: 301px;
-    font-size: var(--paragraph-size);
+    font-size: var(--font-size-base);
     line-height: 150%;
     font-family: var(--font-raleway);
     color: var(--color-white);
@@ -415,7 +410,7 @@
     cursor: pointer;
     border: none;
     padding: 0;
-    background-color: var(--color-gray-200);
+    background-color: var(--color-gray-300);
     position: absolute;
     height: 7.37%;
     width: 48.33%;
@@ -428,117 +423,19 @@
   }
   .lets-get-in-touch {
     position: absolute;
-    top: 837px;
+    top: 4099px;
     left: -1px;
     width: 1440px;
     height: 915px;
     font-size: var(--font-size-lg);
-    color: var(--color-gray-200);
-    font-family: var(--paragraph);
-  }
-  .why-themis-ai-lets-get-in-t {
-    position: absolute;
-    top: 2894px;
-    left: 0px;
-    width: 1440px;
-    height: 2123px;
-    font-size: var(--font-size-41xl);
-    font-family: var(--font-raleway);
-  }
-  .bottom-contact-information-child {
-    position: absolute;
-    top: 0px;
-    left: calc(50% - 608px);
-    border-radius: 40px;
-    background: linear-gradient(121.9deg, #fff, #f7f9ff);
-    border: 1px solid #d6dded;
-    box-sizing: border-box;
-    width: 1216px;
-    height: 398px;
-    mix-blend-mode: normal;
-  }
-  .basic-info {
-    position: absolute;
-    top: 163px;
-    left: calc(50% - 536px);
-    line-height: 150%;
-    display: inline-block;
-    width: 356px;
-  }
-  .home1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    line-height: 150%;
-  }
-  .about {
-    position: absolute;
-    top: 0px;
-    left: 93px;
-    line-height: 150%;
-  }
-  .how-it-works {
-    position: absolute;
-    top: 0px;
-    left: 187px;
-    line-height: 150%;
-  }
-  .services {
-    position: absolute;
-    top: 0px;
-    left: 335px;
-    line-height: 150%;
-  }
-  .home-parent {
-    position: absolute;
-    top: 155px;
-    left: 743px;
-    width: 401px;
-    height: 24px;
-  }
-  .themis-ai2 {
-    position: absolute;
-    top: 36px;
-    left: 63.6px;
-    line-height: 150%;
-    display: inline-block;
-    width: 255.4px;
-    height: 37.2px;
-  }
-  .logo-1-icon2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 105px;
-    height: 113px;
-    object-fit: cover;
-  }
-  .logo-bottom {
-    position: absolute;
-    top: 26px;
-    left: 72px;
-    width: 319px;
-    height: 113px;
-    text-align: center;
-    font-size: var(--font-size-11xl);
-    color: var(--color-black);
-    font-family: var(--font-raleway);
-  }
-  .bottom-contact-information {
-    position: absolute;
-    top: 4743px;
-    left: calc(50% - 610px);
-    width: 1216px;
-    height: 398px;
-    font-size: var(--paragraph-size);
-    color: var(--color-lightslategray);
+    color: var(--color-gray-300);
   }
   .doc-review-child {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-3xs);
-    background-color: var(--color-gray-300);
+    background-color: var(--color-gray-400);
     width: 632px;
     height: 287px;
     mix-blend-mode: linear-dodge;
@@ -574,17 +471,6 @@
     left: 74px;
     width: 632px;
     height: 287px;
-  }
-  .deposition-prep-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-gray-300);
-    width: 632px;
-    height: 287px;
-    opacity: 0.1;
-    mix-blend-mode: linear-dodge;
   }
   .craft-precise-deposition {
     position: absolute;
@@ -636,6 +522,39 @@
     width: 632px;
     height: 287px;
   }
+  .personalized-writing-style1 {
+    position: absolute;
+    top: calc(50% - 91.5px);
+    left: calc(50% - 161px);
+    line-height: 120%;
+    font-weight: 600;
+  }
+  .ensure-the-ai-generated {
+    position: absolute;
+    top: 133px;
+    left: 30px;
+    font-size: 27px;
+    line-height: 150%;
+    color: var(--color-silver);
+    display: inline-block;
+    width: 581px;
+  }
+  .medical-icons3 {
+    position: absolute;
+    top: 18px;
+    left: 43px;
+    width: 75px;
+    height: 94.6px;
+    overflow: hidden;
+  }
+  .personalized-writing-style {
+    position: absolute;
+    top: 1753px;
+    left: 74px;
+    width: 632px;
+    height: 287px;
+    font-size: 36px;
+  }
   .provide-summaries-of {
     position: absolute;
     top: 133px;
@@ -646,7 +565,7 @@
     display: inline-block;
     width: 581px;
   }
-  .medical-icons3 {
+  .medical-icons4 {
     position: absolute;
     top: 46px;
     left: 32px;
@@ -661,6 +580,21 @@
     width: 632px;
     height: 287px;
   }
+  .medical-icons5 {
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    width: 110px;
+    height: 77.5px;
+    overflow: hidden;
+  }
+  .paralegal-training {
+    position: absolute;
+    top: 1753px;
+    left: 738px;
+    width: 632px;
+    height: 287px;
+  }
   .case-analysis-child {
     position: absolute;
     top: 0px;
@@ -670,7 +604,7 @@
     height: 287px;
     mix-blend-mode: linear-dodge;
   }
-  .medical-icons4 {
+  .medical-icons6 {
     position: absolute;
     top: 42px;
     left: 32px;
@@ -695,7 +629,7 @@
     display: inline-block;
     width: 571px;
   }
-  .medical-icons5 {
+  .medical-icons7 {
     position: absolute;
     top: 35px;
     left: 43px;
@@ -720,7 +654,7 @@
     line-height: 150%;
     font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-darkslategray);
+    color: var(--color-darkslategray-200);
     text-align: center;
     display: inline-block;
   }
@@ -735,6 +669,20 @@
     align-items: center;
     justify-content: center;
     padding: var(--padding-lg) var(--padding-42xl);
+  }
+  .about {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 600;
+    font-family: var(--font-raleway);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
   }
   .home-page-service {
     width: 92px;
@@ -758,22 +706,8 @@
     padding: var(--padding-3xs);
     box-sizing: border-box;
   }
-  .price {
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    position: relative;
-    font-size: var(--font-size-mini);
-    line-height: 150%;
-    font-weight: 600;
-    font-family: var(--font-raleway);
-    color: var(--color-black);
-    text-align: left;
-    display: inline-block;
-  }
   .home-page-service3 {
-    width: 137px;
+    width: 63px;
     border-radius: var(--br-3xs);
     height: 40px;
     display: flex;
@@ -788,16 +722,16 @@
     top: 22px;
     left: calc(50% - 259px);
     border-radius: var(--br-3xs);
-    background-color: rgba(255, 255, 255, 0.69);
+    background-color: var(--color-gray-500);
     width: 518px;
     height: 53px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 22px 54px;
+    padding: var(--padding-3xl) var(--padding-35xl);
     box-sizing: border-box;
-    gap: 20px;
+    gap: var(--gap-xl);
   }
   .sign-in {
     cursor: pointer;
@@ -805,7 +739,7 @@
     padding: 0;
     background-color: transparent;
     position: relative;
-    font-size: var(--paragraph-size);
+    font-size: var(--font-size-base);
     line-height: 150%;
     font-weight: 700;
     font-family: var(--font-raleway);
@@ -828,11 +762,11 @@
     padding: 0;
     background-color: transparent;
     position: relative;
-    font-size: var(--paragraph-size);
+    font-size: var(--font-size-base);
     line-height: 150%;
     font-weight: 700;
     font-family: var(--font-raleway);
-    color: var(--color-darkslategray);
+    color: var(--color-darkslategray-200);
     text-align: center;
     display: inline-block;
   }
@@ -850,6 +784,76 @@
     align-items: center;
     justify-content: center;
   }
+  .why-themis-ai {
+    position: absolute;
+    top: calc(50% - 36px);
+    left: calc(50% - 214px);
+    line-height: 120%;
+    display: inline-block;
+    width: 428px;
+  }
+  .questions {
+    position: absolute;
+    top: calc(50% + 615.5px);
+    left: calc(50% - 217px);
+    width: 428px;
+    height: 72px;
+    font-size: var(--font-size-41xl);
+    font-family: var(--font-raleway);
+  }
+  .logo-top2 {
+    position: absolute;
+    top: 5068px;
+    left: 77px;
+    width: 236px;
+    height: 88px;
+    text-align: center;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-saira);
+  }
+  .linkedin {
+    position: absolute;
+    top: 5096px;
+    left: 406px;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 500;
+    font-family: var(--font-raleway);
+    text-align: center;
+  }
+  .schedule-demo {
+    position: absolute;
+    top: 5096px;
+    left: 561px;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 500;
+    font-family: var(--font-raleway);
+    text-align: center;
+    cursor: pointer;
+  }
+  .pricing {
+    position: absolute;
+    top: 5096px;
+    left: 786px;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 500;
+    font-family: var(--font-raleway);
+    text-align: center;
+    cursor: pointer;
+  }
+  .contact-us {
+    position: absolute;
+    top: 5097px;
+    left: 926px;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 500;
+    font-family: var(--font-raleway);
+    text-align: center;
+    cursor: pointer;
+  }
   .home {
     width: 100%;
     position: relative;
@@ -863,6 +867,6 @@
     text-align: left;
     font-size: var(--font-size-21xl);
     color: var(--color-white);
-    font-family: var(--paragraph);
+    font-family: var(--font-inter);
   }
 </style>
